@@ -36,8 +36,8 @@
         session_name("felix_sex_survey");
         session_start();
 
-        // mysql_connect("localhost",$user,$pass);
-        // mysql_select_db($db);
+        mysql_connect("localhost", 'root', '');
+        mysql_select_db('sexsurvey');
 		
 		$local = true;
 ?>
@@ -47,11 +47,13 @@
             <h1>Felix Sex Survey 2012</h1>
         </header>
         <div role="main" id="main">
+        <h2>Introduction</h2>
+        <p>Introductory text here</p>
         <?php
         	if (array_key_exists('login', $_POST)) {
         		// attempting to login
 				if (!login($_POST['uname'], $_POST['pass'])) {
-					echo('login failed error here');
+					?><div class="alert alert-error">Sorry, your account details were not accepted. Please try again.</div><?php
 				} else {
 					strtolower($_SESSION['felix_sex_survey']['uname'] = $_POST['uname']);
 					// Add redirect here if we need to
@@ -63,16 +65,17 @@
 				?>
 	            <form method="post" id="loginForm" class="form-horizontal">
 	                <legend>Please enter your username/password to continue:</legend>
+	                <p>Why we get these details info text</p>
                     <fieldset class="control-group">
                         <label for="uname">IC Username:</label>
                         <div class="controls">
-                            <input type="text" name="uname" />
+                            <input type="text" name="uname" id="uname" />
                         </div>
                     </fieldset>
                     <fieldset class="control-group">
                         <label for="pass">IC Password:</label>
                         <div class="controls">
-                            <input type="password" name="pass" />
+                            <input type="password" name="pass" id="pass" />
                         </div>
                     </fieldset>
                     <fieldset class="form-actions">
@@ -82,24 +85,19 @@
 	            <?php
 			} else {
 				if (isdone($_SESSION['felix_sex_survey']['uname'])) {
-					echo('thank you for filling out message here');
+					?><div class="alert alert-block alert-success"><h4 class="alert-heading">Thank you!</h4>Your response has already been recorded, thank you for filling out the survey. Results and analysis will be published in Felix on February 17, after which your data will be deleted.</div><?php
 				} elseif (array_key_exists('response', $_POST)) {
-					foreach ($_POST as $k => $v) {
-						if ($k != "submit") {
-							$ks[] = "`".mysql_real_escape_string($k)."`";
-							$vs[] = "'".mysql_real_escape_string($v)."'";
-						}
-					}
-					$sql = "INSERT INTO `sexsurvey` (id,".(implode(",",$ks)).") VALUES ('$id',".(implode(",",$vs)).")";
-					mysql_query($sql);
+					addresponse(json_encode($_POST));
+					markasdone($_SESSION['felix_sex_survey']['uname']);
 					
-					echo('thank you for filling out message here');
+					?><div class="alert alert-block alert-success"><h4 class="alert-heading">Thank you!</h4>Your response has been saved, thank you for filling out the survey. Results and analysis will be published in Felix on February 17, after which your data will be deleted.</div><?php
 				} else {
 					// Display questions
                     $questions = file_get_contents('questions.json');
                     $questions = json_decode($questions, true);
                     ?>
                         <form method="post">
+							<input type="hidden" name="real_department" value="<?php echo getdept($_SESSION['felix_sex_survey']['uname']); ?>" />
                             <?php 
                                 foreach($questions as $key => $value) { 
                                     if($value['type'] == 'header') { ?>

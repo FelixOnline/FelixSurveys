@@ -4,14 +4,20 @@
 
 	// Mark a user as having completed the survey
 	function markasdone($uname) {
-		// FIXME
-		return $uname;
+		$sql = "INSERT INTO `sexsurvey_completers` (-uname) VALUES ('".mysql_real_escape_string(sha1($uname))."')";
+		return mysql_query($sql);
 	}
 
 	// Check to see if a user has completed the survey
 	function isdone($uname) {
-		// FIXME
-		return false;
+		$sql = "SELECT COUNT(*) FROM `sexsurvey_completers` WHERE uname='".mysql_real_escape_string(sha1($uname))."'";
+		$rsc = mysql_query($sql);
+		list($match) = mysql_fetch_array($rsc);
+		if ($match > 0) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	// Check to see if we have authenticated
@@ -34,3 +40,30 @@
             echo $class.' ';
         }
     }
+
+	// get dept from ldap for user
+	function getdept($uname) {
+		global $local;
+		
+	    if(!$local) { // if on union server
+	        $ds=ldap_connect("addressbook.ic.ac.uk");
+	        $r=ldap_bind($ds);
+	        $justthese = array("gecos");
+	        $sr=ldap_search($ds, "ou=People, ou=shibboleth, dc=ic, dc=ac, dc=uk", "uid=$uname", $justthese);
+	        $info = ldap_get_entries($ds, $sr);
+	        if ($info["count"] > 0) {
+	            $data = explode('|', $info[0]['o'][0]);
+				explode($data[3]);
+	        } else {
+	            return 'Unknown';
+			}
+	    } else {
+	        return 'Unknown';
+	    }
+	}
+	
+	// add survey responses to database
+	function addresponse($response) {
+		$sql = "INSERT INTO `sexsurvey_responses` (id, data) VALUES (NULL, '".mysql_real_escape_string($response)."')";
+		return mysql_query($sql);
+	}
