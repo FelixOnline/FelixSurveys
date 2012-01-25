@@ -58,6 +58,22 @@
             }
         ]
     },
+    "dependant2": {
+        "dependant": {
+            "id": "age",
+            "answer": "20"
+        },
+        "label": "Are you really?",
+        "type": "radio",
+        "name": "dep2",
+        "options": [
+            {
+                "value": "surely",
+                "label": "not",
+                "name": "afdsf"
+            }
+        ]
+    },
     "textbox": {
         "type": "textbox",
         "label": "Anything else?",
