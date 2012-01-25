@@ -4,7 +4,7 @@
         "type": "header"
     },
     "sex": {
-        "label": "Are you male or female",
+        "label": "Are you male or female?",
         "type": "radio",
         "options": [
             {
@@ -20,8 +20,9 @@
         ]
     },
     "age": {
-        "label": "What age are you",
+        "label": "What age are you?",
         "type": "dropdown",
+        "name": "age",
         "options": [
             { 
                 "value": "17",
@@ -51,8 +52,14 @@
         "options": [
             {
                 "value": "hello",
-                "label": "world"
+                "label": "world",
+                "name": "name"
             }
         ]
+    },
+    "textbox": {
+        "type": "textbox",
+        "label": "Anything else?",
+        "name": "textbox"
     }
 }

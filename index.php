@@ -47,105 +47,112 @@
             <h1>Felix Sex Survey 2012</h1>
         </header>
         <div role="main" id="main">
-        <h2>Introduction</h2>
-        <p>Introductory text here</p>
-        <?php
-        	if (array_key_exists('login', $_POST)) {
-        		// attempting to login
-				if (!login($_POST['uname'], $_POST['pass'])) {
-					?><div class="alert alert-error">Sorry, your account details were not accepted. Please try again.</div><?php
-				} else {
-					strtolower($_SESSION['felix_sex_survey']['uname'] = $_POST['uname']);
-					// Add redirect here if we need to
-				}
-			}
-			
-			if (!isloggedin()) {
-				// not logged in? display login form
-				?>
-	            <form method="post" id="loginForm" class="form-horizontal">
-	                <legend>Please enter your username/password to continue:</legend>
-	                <p>Why we get these details info text</p>
-                    <fieldset class="control-group">
-                        <label for="uname">IC Username:</label>
-                        <div class="controls">
-                            <input type="text" name="uname" id="uname" />
-                        </div>
-                    </fieldset>
-                    <fieldset class="control-group">
-                        <label for="pass">IC Password:</label>
-                        <div class="controls">
-                            <input type="password" name="pass" id="pass" />
-                        </div>
-                    </fieldset>
-                    <fieldset class="form-actions">
-	                    <input type="submit" value="Login" name="login" id="submitButton" class="btn primary"/>
-                    </fieldset>
-	            </form>
-	            <?php
-			} else {
-				if (isdone($_SESSION['felix_sex_survey']['uname'])) {
-					?><div class="alert alert-block alert-success"><h4 class="alert-heading">Thank you!</h4>Your response has already been recorded, thank you for filling out the survey. Results and analysis will be published in Felix on February 17, after which your data will be deleted.</div><?php
-				} elseif (array_key_exists('response', $_POST)) {
-					addresponse(json_encode($_POST));
-					markasdone($_SESSION['felix_sex_survey']['uname']);
-					
-					?><div class="alert alert-block alert-success"><h4 class="alert-heading">Thank you!</h4>Your response has been saved, thank you for filling out the survey. Results and analysis will be published in Felix on February 17, after which your data will be deleted.</div><?php
-				} else {
-					// Display questions
-                    $questions = file_get_contents('questions.json');
-                    $questions = json_decode($questions, true);
+            <h2>Introduction</h2>
+            <p>Introductory text here</p>
+            <?php
+                if (array_key_exists('login', $_POST)) {
+                    // attempting to login
+                    if (!login($_POST['uname'], $_POST['pass'])) {
+                        ?><div class="alert alert-error">Sorry, your account details were not accepted. Please try again.</div><?php
+                    } else {
+                        strtolower($_SESSION['felix_sex_survey']['uname'] = $_POST['uname']);
+                        // Add redirect here if we need to
+                    }
+                }
+                
+                if (!isloggedin()) {
+                    // not logged in? display login form
                     ?>
-                        <form method="post">
-							<input type="hidden" name="real_department" value="<?php echo getdept($_SESSION['felix_sex_survey']['uname']); ?>" />
-                            <?php 
-                                foreach($questions as $key => $value) { 
-                                    if($value['type'] == 'header') { ?>
-                                        <h3><?php echo $value['label'];?></h3>
-                                        <hr/>
-                                    <?php } else { 
-                                        $classes = array('control-group');
-                                        if($value['dependant']) {
-                                            $classes[] = 'hidden';
-                                            $classes[] = 'dependant';
-                                        }
-                                        ?>
-                                    <fieldset id="<?php echo $key; ?>" class="<?php outputclasses($classes); ?>" <?php if($value['dependant']) { ?> data-dependant="<?php echo $value['dependant']['id']; ?>" data-answer="<?php echo $value['dependant']['answer']; ?>"<?php } ?>>
-                                        <label><?php echo $value['label']; ?>:</label>
-                                        <div class="controls">
-                                            <?php
-                                                switch($value['type']) {
-                                                    case 'dropdown':
-                                                        ?>
-                                                        <select>
-                                                            <?php foreach($value['options'] as $option) { ?>
-                                                                <option value="<?php echo $option['value']; ?>">
-                                                                    <?php echo $option['label'];?>
-                                                                </option>
-                                                            <?php } ?>
-                                                        </select>
-                                                    <?php break;  
-                                                    case 'radio':
-                                                        foreach($value['options'] as $options) {
-                                                    ?>
-                                                        <label class="radio">
-                                                        <input type="radio" value="<?php echo $options['value']; ?>" name="<?php echo $options['name']; ?>">
-                                                            <?php echo $options['label']; ?>
-                                                        </label>
-                                                    <?php 
-                                                        }
-                                                        break;
-                                                }
-                                            ?>
-                                        </div>
-                                    </fieldset>
-                                    <?php } 
-                                } ?>
+                        <form method="post" id="loginForm" class="form-horizontal">
+                            <legend>Please enter your username/password to continue:</legend>
+                            <p>Why we get these details info text</p>
+                            <fieldset class="control-group">
+                                <label for="uname">IC Username:</label>
+                                <div class="controls">
+                                    <input type="text" name="uname" id="uname" />
+                                </div>
+                            </fieldset>
+                            <fieldset class="control-group">
+                                <label for="pass">IC Password:</label>
+                                <div class="controls">
+                                    <input type="password" name="pass" id="pass" />
+                                </div>
+                            </fieldset>
+                            <fieldset class="form-actions">
+                                <input type="submit" value="Login" name="login" id="submitButton" class="btn primary"/>
+                            </fieldset>
                         </form>
-					<?php
-				}
-			}
-		?>
+                    <?php
+                } else {
+                    if (isdone($_SESSION['felix_sex_survey']['uname'])) {
+                        ?><div class="alert alert-block alert-success"><h4 class="alert-heading">Thank you!</h4>Your response has already been recorded, thank you for filling out the survey. Results and analysis will be published in Felix on February 17, after which your data will be deleted.</div><?php
+                    } elseif (array_key_exists('response', $_POST)) {
+                        addresponse(json_encode($_POST));
+                        markasdone($_SESSION['felix_sex_survey']['uname']);
+                        
+                        ?><div class="alert alert-block alert-success"><h4 class="alert-heading">Thank you!</h4>Your response has been saved, thank you for filling out the survey. Results and analysis will be published in Felix on February 17, after which your data will be deleted.</div><?php
+                    } else {
+                        // Display questions
+                        $questions = file_get_contents('questions.json');
+                        $questions = json_decode($questions, true);
+                        ?>
+                            <form method="post" class="">
+                                <input type="hidden" name="real_department" value="<?php echo getdept($_SESSION['felix_sex_survey']['uname']); ?>" />
+                                <?php 
+                                    foreach($questions as $key => $value) { 
+                                        if($value['type'] == 'header') { ?>
+                                            <h3><?php echo $value['label'];?></h3>
+                                            <hr/>
+                                        <?php } else { 
+                                            $classes = array('control-group');
+                                            if($value['dependant']) {
+                                                $classes[] = 'hidden';
+                                                $classes[] = 'dependant';
+                                            }
+                                            ?>
+                                        <fieldset id="<?php echo $key; ?>" class="<?php outputclasses($classes); ?>" <?php if($value['dependant']) { ?> data-dependant="<?php echo $value['dependant']['id']; ?>" data-answer="<?php echo $value['dependant']['answer']; ?>"<?php } ?>>
+                                            <label><?php echo $value['label']; ?></label>
+                                            <div class="controls">
+                                                <?php
+                                                    switch($value['type']) {
+                                                        case 'dropdown':
+                                                            ?>
+                                                                <select name="<?php echo $value['name']; ?>">
+                                                                <?php foreach($value['options'] as $option) { ?>
+                                                                    <option value="<?php echo $option['value']; ?>">
+                                                                        <?php echo $option['label'];?>
+                                                                    </option>
+                                                                <?php } ?>
+                                                            </select>
+                                                        <?php break;  
+                                                        case 'radio':
+                                                            foreach($value['options'] as $options) {
+                                                        ?>
+                                                            <label class="radio">
+                                                            <input type="radio" value="<?php echo $options['value']; ?>" name="<?php echo $options['name']; ?>">
+                                                                <?php echo $options['label']; ?>
+                                                            </label>
+                                                        <?php 
+                                                            }
+                                                            break;
+                                                        case 'textbox':
+                                                            ?>
+                                                            <textarea name="<?php echo $value['name']; ?>"></textarea>
+                                                        <?php break;
+                                                    }
+                                                ?>
+                                            </div>
+                                        </fieldset>
+                                        <?php } 
+                                    } ?>
+                                <fieldset class="form-actions">
+                                    <input type="submit" class="btn primary xlarge" value="Submit" name="response"/>
+                                </fieldset>
+                            </form>
+                        <?php
+                    }
+                }
+            ?>
         </div>
         <footer>
 			<p>&copy; Felix Imperial <a href="#head">Top of page</a></p>
