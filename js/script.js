@@ -51,5 +51,12 @@ $(document).ready(function() {
             $(value).css('visibility', 'visible').fadeIn(200);
         });
     });
+    
+    $("a[rel=popover]")
+        .popover()
+    .click(function(e) {
+      e.preventDefault()
+    })
+    
 });
 
