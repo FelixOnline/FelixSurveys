@@ -8,7 +8,13 @@ $(document).ready(function() {
         var output = [];
         $.each(dependant, function(key, value) {
             if(value.id == needle) {
-                output.push(value.element);
+                if(answer) {
+                    if(value.answer == answer) {
+                        output.push(value.element);
+                    }
+                } else {
+                    output.push(value.element);
+                }
             }
         });
         return output;
@@ -19,8 +25,28 @@ $(document).ready(function() {
     });
 
     $('input, select').change(function(event) {
-        console.log(this);
-        var questions = dependant.find($(this).parents('fieldset').attr('id'));
+        var answer;
+        switch(this.tagName) {
+            case 'SELECT':
+                answer = $(this).find('option:selected').val();
+                break;
+            case 'INPUT':
+                answer = $(this).val();
+                break;
+        }
+
+        /*
+         * Reset all dependant questions
+         */
+        $.each(dependant.find($(this).parents('fieldset').attr('id')), function(key, value) {
+            $(value).hide();
+        });
+
+        var questions = dependant.find(
+            $(this).parents('fieldset').attr('id'), 
+            answer
+        );
+
         $.each(questions, function(key, value) {
             $(value).css('visibility', 'visible').fadeIn(200);
         });
