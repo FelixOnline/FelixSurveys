@@ -175,6 +175,7 @@
             ?>
         </div>
         <footer>
+        	<img class="footer-right" src="img/title.jpg" alt="FELIX" />
 			<p>&copy; Felix Imperial <a href="#head">Top of page</a></p>
         </footer>
     </div>
