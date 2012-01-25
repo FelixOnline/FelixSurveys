@@ -112,7 +112,7 @@
                         $questions = file_get_contents('questions.json');
                         $questions = json_decode($questions, true);
                         ?>
-                            <form method="post" class="">
+                            <form method="post" class="form-horizontal">
 							<h3>Background information</h3>
 							<p>If you don’t want to answer any question, just leave it blank. At the end of the survey you will be asked confirm the questions you’ve left blank (to make sure they’re blank intentionally and not just overlooked).</p>
 							<p>This questionnaire should take no more that 10 minutes. The number of questions varies depending on previous answers but the maximum number is 30.</p>
@@ -121,8 +121,7 @@
                                 <?php 
                                     foreach($questions as $key => $value) { 
                                         if($value['type'] == 'header') { ?>
-                                            <h3><?php echo $value['label'];?></h3>
-                                            <hr/>
+                                            <legend><?php echo $value['label'];?></legend>
                                         <?php } else { 
                                             $classes = array('control-group');
                                             if(array_key_exists('dependant', $value)) {
@@ -131,13 +130,13 @@
                                             }
                                             ?>
                                         <fieldset id="<?php echo $key; ?>" class="<?php outputclasses($classes); ?>" <?php if(array_key_exists('dependant', $value)) { ?> data-dependant="<?php echo $value['dependant']['id']; ?>" data-answer="<?php echo $value['dependant']['answer']; ?>"<?php } ?>>
-                                            <label><?php echo $value['label']; ?></label>
+                                            <label<?php if ($value['type'] !== 'radio'): ?> for="cont_<?php echo $value['name']; ?>"<?php endif; ?>><?php echo $value['label']; ?></label>
                                             <div class="controls">
                                                 <?php
                                                     switch($value['type']) {
                                                         case 'dropdown':
                                                             ?>
-                                                                <select name="<?php echo $value['name']; ?>">
+                                                                <select name="<?php echo $value['name']; ?>" id="cont_<?php echo $value['name']; ?>">
                                                                 <?php foreach($value['options'] as $option) { ?>
                                                                     <option value="<?php echo $option['value']; ?>">
                                                                         <?php echo $option['label'];?>
@@ -157,7 +156,7 @@
                                                             break;
                                                         case 'textbox':
                                                             ?>
-                                                            <textarea name="<?php echo $value['name']; ?>"></textarea>
+                                                            <textarea name="<?php echo $value['name']; ?>" id="cont_<?php echo $value['name']; ?>"></textarea>
                                                         <?php break;
                                                     }
                                                 ?>
