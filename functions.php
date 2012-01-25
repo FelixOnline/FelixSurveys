@@ -4,7 +4,7 @@
 
 	// Mark a user as having completed the survey
 	function markasdone($uname) {
-		$sql = "INSERT INTO `sexsurvey_completers` (-uname) VALUES ('".mysql_real_escape_string(sha1($uname))."')";
+		$sql = "INSERT INTO `sexsurvey_completers` (uname) VALUES ('".mysql_real_escape_string(sha1($uname))."')";
 		return mysql_query($sql);
 	}
 

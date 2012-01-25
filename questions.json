@@ -49,6 +49,7 @@
         },
         "label": "Test dependant",
         "type": "dropdown",
+        "name": "dep",
         "options": [
             {
                 "value": "hello",

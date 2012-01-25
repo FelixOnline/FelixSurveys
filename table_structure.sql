@@ -41,13 +41,13 @@ LOCK TABLES `sexsurvey_completers` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `sexsurvey_reponses`
+-- Table structure for table `sexsurvey_responses`
 --
 
-DROP TABLE IF EXISTS `sexsurvey_reponses`;
+DROP TABLE IF EXISTS `sexsurvey_responses`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `sexsurvey_reponses` (
+CREATE TABLE `sexsurvey_responses` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `data` longtext,
   PRIMARY KEY (`id`)
@@ -55,12 +55,12 @@ CREATE TABLE `sexsurvey_reponses` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `sexsurvey_reponses`
+-- Dumping data for table `sexsurvey_responses`
 --
 
 LOCK TABLES `sexsurvey_reponses` WRITE;
-/*!40000 ALTER TABLE `sexsurvey_reponses` DISABLE KEYS */;
-/*!40000 ALTER TABLE `sexsurvey_reponses` ENABLE KEYS */;
+/*!40000 ALTER TABLE `sexsurvey_responses` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sexsurvey_responses` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
