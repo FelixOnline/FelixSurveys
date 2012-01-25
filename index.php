@@ -20,7 +20,7 @@
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
-    <link rel="stylesheet/less" type="text/css" href="css/bootstrap.less">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet/less" type="text/css" href="css/style.less">
     <script src="js/less-1.2.0.min.js"></script>
 
