@@ -61,13 +61,23 @@
 			if (!isloggedin()) {
 				// not logged in? display login form
 				?>
-	            <form method="post" id="loginForm">
-	                <p>Please enter your username/password to continue:</p>
-	                <table>
-	                    <tr><td><label for="uname">IC Username:</label></td><td><input type="text" name="uname" /></td></tr>
-	                    <tr><td><label for="pass">IC Password:</label></td><td><input type="password" name="pass" /></td></tr>
-	                    <tr><td></td><td><input type="submit" value="Login" name="login" id="submitButton"/></td></tr>
-	                </table>
+	            <form method="post" id="loginForm" class="form-horizontal">
+	                <legend>Please enter your username/password to continue:</legend>
+                    <fieldset class="control-group">
+                        <label for="uname">IC Username:</label>
+                        <div class="controls">
+                            <input type="text" name="uname" />
+                        </div>
+                    </fieldset>
+                    <fieldset class="control-group">
+                        <label for="pass">IC Password:</label>
+                        <div class="controls">
+                            <input type="password" name="pass" />
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-actions">
+	                    <input type="submit" value="Login" name="login" id="submitButton" class="btn primary"/>
+                    </fieldset>
 	            </form>
 	            <?php
 			} else {
