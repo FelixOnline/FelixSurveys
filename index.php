@@ -47,6 +47,8 @@
             <h1>Felix Sex Survey 2012</h1>
         </header>
         <div role="main" id="main">
+        <h2>Introduction</h2>
+        <p>Introductory text here</p>
         <?php
         	if (array_key_exists('login', $_POST)) {
         		// attempting to login
@@ -63,16 +65,17 @@
 				?>
 	            <form method="post" id="loginForm" class="form-horizontal">
 	                <legend>Please enter your username/password to continue:</legend>
+	                <p>Why we get these details info text</p>
                     <fieldset class="control-group">
                         <label for="uname">IC Username:</label>
                         <div class="controls">
-                            <input type="text" name="uname" />
+                            <input type="text" name="uname" id="uname" />
                         </div>
                     </fieldset>
                     <fieldset class="control-group">
                         <label for="pass">IC Password:</label>
                         <div class="controls">
-                            <input type="password" name="pass" />
+                            <input type="password" name="pass" id="pass" />
                         </div>
                     </fieldset>
                     <fieldset class="form-actions">
@@ -82,12 +85,12 @@
 	            <?php
 			} else {
 				if (isdone($_SESSION['felix_sex_survey']['uname'])) {
-					?><div class="alert alert-info alert-block"><div class="alert-heading"><strong>Thank you!</strong></div>Your response has already been recorded, thank you for filling out the survey. Results and analysis will be published in Felix in February.</div><?php
+					?><div class="alert alert-block alert-success"><h4 class="alert-heading">Thank you!</h4>Your response has already been recorded, thank you for filling out the survey. Results and analysis will be published in Felix on February 17, after which your data will be deleted.</div><?php
 				} elseif (array_key_exists('response', $_POST)) {
 					addresponse(json_encode($_POST));
 					markasdone($_SESSION['felix_sex_survey']['uname']);
 					
-					?><div class="alert alert-success alert-block"><div class="alert-heading"><strong>Thank you!</strong></div>Your response has been saved, thank you for filling out the survey. Results and analysis will be published in Felix in February.</div><?php
+					?><div class="alert alert-block alert-success"><h4 class="alert-heading">Thank you!</h4>Your response has been saved, thank you for filling out the survey. Results and analysis will be published in Felix on February 17, after which your data will be deleted.</div><?php
 				} else {
 					// Display questions
                     $questions = file_get_contents('questions.json');
