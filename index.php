@@ -61,13 +61,23 @@
 			if (!isloggedin()) {
 				// not logged in? display login form
 				?>
-	            <form method="post" id="loginForm">
-	                <p>Please enter your username/password to continue:</p>
-	                <table>
-	                    <tr><td><label for="uname">IC Username:</label></td><td><input type="text" name="uname" /></td></tr>
-	                    <tr><td><label for="pass">IC Password:</label></td><td><input type="password" name="pass" /></td></tr>
-	                    <tr><td></td><td><input type="submit" value="Login" name="login" id="submitButton"/></td></tr>
-	                </table>
+	            <form method="post" id="loginForm" class="form-horizontal">
+	                <legend>Please enter your username/password to continue:</legend>
+                    <fieldset class="control-group">
+                        <label for="uname">IC Username:</label>
+                        <div class="controls">
+                            <input type="text" name="uname" />
+                        </div>
+                    </fieldset>
+                    <fieldset class="control-group">
+                        <label for="pass">IC Password:</label>
+                        <div class="controls">
+                            <input type="password" name="pass" />
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-actions">
+	                    <input type="submit" value="Login" name="login" id="submitButton" class="btn primary"/>
+                    </fieldset>
 	            </form>
 	            <?php
 			} else {
@@ -80,11 +90,44 @@
 					?><div class="alert alert-success alert-block"><div class="alert-heading"><strong>Thank you!</strong></div>Your response has been saved, thank you for filling out the survey. Results and analysis will be published in Felix in February.</div><?php
 				} else {
 					// Display questions
-					?>
-					questions here kplsthx
-					        <form method="post">
-								<input type="hidden" name="real_department" value="<?php echo getdept($_SESSION['felix_sex_survey']['uname']); ?>" />
-					        </form>
+                    $questions = file_get_contents('questions.json');
+                    $questions = json_decode($questions, true);
+                    ?>
+                        <form method="post">
+							<input type="hidden" name="real_department" value="<?php echo getdept($_SESSION['felix_sex_survey']['uname']); ?>" />
+                            <?php 
+                                foreach($questions as $key => $value) { ?>
+                                    <fieldset class="control-group" id="<?php echo $key; ?>">
+                                        <label><?php echo $value['label']; ?>:</label>
+                                        <div class="controls">
+                                            <?php
+                                                switch($value['type']) {
+                                                    case 'dropdown':
+                                                        ?>
+                                                        <select>
+                                                            <?php foreach($value['options'] as $option) { ?>
+                                                                <option value="<?php echo $option['value']; ?>">
+                                                                    <?php echo $option['label'];?>
+                                                                </option>
+                                                            <?php } ?>
+                                                        </select>
+                                                    <?php break;  
+                                                    case 'radio':
+                                                        foreach($value['options'] as $options) {
+                                                    ?>
+                                                        <label class="radio">
+                                                            <input type="radio" value="<?php echo $options['value']; ?>">
+                                                            <?php echo $options['label']; ?>
+                                                        </label>
+                                                    <?php 
+                                                        }
+                                                        break;
+                                                }
+                                            ?>
+                                        </div>
+                                    </fieldset>
+                            <?php } ?>
+                        </form>
 					<?php
 				}
 			}
