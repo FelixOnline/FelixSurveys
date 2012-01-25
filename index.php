@@ -36,8 +36,8 @@
         session_name("felix_sex_survey");
         session_start();
 
-        // mysql_connect("localhost",$user,$pass);
-        // mysql_select_db($db);
+        mysql_connect("localhost", 'root', '');
+        mysql_select_db('sexsurvey');
 		
 		$local = true;
 ?>
@@ -51,7 +51,7 @@
         	if (array_key_exists('login', $_POST)) {
         		// attempting to login
 				if (!login($_POST['uname'], $_POST['pass'])) {
-					echo('login failed error here');
+					?><div class="alert alert-error">Sorry, your account details were not accepted. Please try again.</div><?php
 				} else {
 					strtolower($_SESSION['felix_sex_survey']['uname'] = $_POST['uname']);
 					// Add redirect here if we need to
@@ -72,24 +72,18 @@
 	            <?php
 			} else {
 				if (isdone($_SESSION['felix_sex_survey']['uname'])) {
-					echo('thank you for filling out message here');
+					?><div class="alert alert-info alert-block"><div class="alert-heading"><strong>Thank you!</strong></div>Your response has already been recorded, thank you for filling out the survey. Results and analysis will be published in Felix in February.</div><?php
 				} elseif (array_key_exists('response', $_POST)) {
-					foreach ($_POST as $k => $v) {
-						if ($k != "submit") {
-							$ks[] = "`".mysql_real_escape_string($k)."`";
-							$vs[] = "'".mysql_real_escape_string($v)."'";
-						}
-					}
-					$sql = "INSERT INTO `sexsurvey` (id,".(implode(",",$ks)).") VALUES ('$id',".(implode(",",$vs)).")";
-					mysql_query($sql);
+					addresponse(json_encode($_POST));
+					markasdone($_SESSION['felix_sex_survey']['uname']);
 					
-					echo('thank you for filling out message here');
+					?><div class="alert alert-success alert-block"><div class="alert-heading"><strong>Thank you!</strong></div>Your response has been saved, thank you for filling out the survey. Results and analysis will be published in Felix in February.</div><?php
 				} else {
 					// Display questions
 					?>
 					questions here kplsthx
 					        <form method="post">
-					
+								<input type="hidden" name="real_department" value="<?php echo getdept($_SESSION['felix_sex_survey']['uname']); ?>" />
 					        </form>
 					<?php
 				}
