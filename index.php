@@ -31,12 +31,16 @@
        for optimal performance, create your own custom Modernizr build: www.modernizr.com/download/ -->
     <script src="js/libs/modernizr-2.0.6.min.js"></script>
 </head>
-
+<?php
+		require('functions.php');
         session_name("felix_sex_survey");
         session_start();
 
-        mysql_connect("localhost",$user,$pass);
-        mysql_select_db($db);
+        // mysql_connect("localhost",$user,$pass);
+        // mysql_select_db($db);
+		
+		$local = true;
+?>
 <body>
     <div class="container">
         <header id="head">
@@ -44,90 +48,85 @@
         </header>
         <div role="main" id="main">
         <?php
-           /* if (!isset($_SESSION['felix_sex_survey']) || !$_SESSION['felix_sex_survey']['uname']) {
-                if ($_POST['login']) {
-                    if (pam_auth($_POST['uname'],$_POST['pass'])) {
-                        $_SESSION['felix_sex_survey'] = strtolower($_POST['uname']);
-                    }
-                    else
-                        echo "<p>Authentication failed. Please go back and try again.</p>";
-                    }
-                else { */
-        ?>
-            <form method="post" id="loginForm">
-                <p>Please enter your username/password to continue:</p>
-                <table>
-                    <tr><td><label for="uname">IC Username:</label></td><td><input type="text" name="uname" /></td></tr>
-                    <tr><td><label for="pass">IC Password:</label></td><td><input type="password" name="pass" /></td></tr>
-                    <tr><td></td><td><input type="submit" value="Login" name="login" id="submitButton"/></td></tr>
-                </table>
-            </form>	
-        <?php
-                /*}
-        }
-    if (isset($_SESSION['felix_sex_survey'])) {
-        $id = sha1(md5($_SESSION['felix_sex_survey']));
-        if ($_POST['submit']) {
-            foreach ($_POST as $k => $v) {
-                if ($k != "submit") {
-                    $ks[] = "`".mysql_real_escape_string($k)."`";
-                    $vs[] = "'".mysql_real_escape_string($v)."'";
-                }
-            }
-            $sql = "INSERT INTO `sexsurvey` (id,".(implode(",",$ks)).") VALUES ('$id',".(implode(",",$vs)).")";
-            mysql_query($sql);
-        }
-        $sql = "SELECT COUNT(*) FROM sexsurvey WHERE id='$id'";
-        $rsc = mysql_query($sql);
-        list($match) = mysql_fetch_array($rsc);
-        if ($match > 0) {
-            echo "<div id='thankyou'><img src='thumbsup.jpg' width='200px'/><p>Thank you for submitting your answers to this survey. Your data will be deleted as soon after the survey as results have been aggregated.</p></div>";
-        }
-        else { */
-?>
-
-    <?php
-        $questions = file_get_contents('questions.json');
-        $questions = json_decode($questions, true);
-    ?>
-        <form method="post">
-            <?php 
-                foreach($questions as $key => $value) { ?>
-                    <fieldset class="control-group" id="<?php echo $key; ?>">
-                        <label><?php echo $value['label']; ?>:</label>
-                        <div class="controls">
-                            <?php
-                                switch($value['type']) {
-                                    case 'dropdown':
-                                        ?>
-                                        <select>
-                                            <?php foreach($value['options'] as $option) { ?>
-                                                <option value="<?php echo $option['value']; ?>">
-                                                    <?php echo $option['label'];?>
-                                                </option>
-                                            <?php } ?>
-                                        </select>
-                                    <?php break;  
-                                    case 'radio':
-                                        foreach($value['options'] as $options) {
-                                    ?>
-                                        <label class="radio">
-                                            <input type="radio" value="<?php echo $options['value']; ?>">
-                                            <?php echo $options['label']; ?>
-                                        </label>
-                                    <?php 
-                                        }
-                                        break;
-                                }
-                            ?>
-                        </div>
-                    </fieldset>
-            <?php } ?>
-        </form>
-<?php
-/*} } */
-?>
-
+        	if (array_key_exists('login', $_POST)) {
+        		// attempting to login
+				if (!login($_POST['uname'], $_POST['pass'])) {
+					echo('login failed error here');
+				} else {
+					strtolower($_SESSION['felix_sex_survey']['uname'] = $_POST['uname']);
+					// Add redirect here if we need to
+				}
+			}
+			
+			if (!isloggedin()) {
+				// not logged in? display login form
+				?>
+	            <form method="post" id="loginForm">
+	                <p>Please enter your username/password to continue:</p>
+	                <table>
+	                    <tr><td><label for="uname">IC Username:</label></td><td><input type="text" name="uname" /></td></tr>
+	                    <tr><td><label for="pass">IC Password:</label></td><td><input type="password" name="pass" /></td></tr>
+	                    <tr><td></td><td><input type="submit" value="Login" name="login" id="submitButton"/></td></tr>
+	                </table>
+	            </form>
+	            <?php
+			} else {
+				if (isdone($_SESSION['felix_sex_survey']['uname'])) {
+					echo('thank you for filling out message here');
+				} elseif (array_key_exists('response', $_POST)) {
+					foreach ($_POST as $k => $v) {
+						if ($k != "submit") {
+							$ks[] = "`".mysql_real_escape_string($k)."`";
+							$vs[] = "'".mysql_real_escape_string($v)."'";
+						}
+					}
+					$sql = "INSERT INTO `sexsurvey` (id,".(implode(",",$ks)).") VALUES ('$id',".(implode(",",$vs)).")";
+					mysql_query($sql);
+					
+					echo('thank you for filling out message here');
+				} else {
+					// Display questions
+                    $questions = file_get_contents('questions.json');
+                    $questions = json_decode($questions, true);
+                    ?>
+                        <form method="post">
+                            <?php 
+                                foreach($questions as $key => $value) { ?>
+                                    <fieldset class="control-group" id="<?php echo $key; ?>">
+                                        <label><?php echo $value['label']; ?>:</label>
+                                        <div class="controls">
+                                            <?php
+                                                switch($value['type']) {
+                                                    case 'dropdown':
+                                                        ?>
+                                                        <select>
+                                                            <?php foreach($value['options'] as $option) { ?>
+                                                                <option value="<?php echo $option['value']; ?>">
+                                                                    <?php echo $option['label'];?>
+                                                                </option>
+                                                            <?php } ?>
+                                                        </select>
+                                                    <?php break;  
+                                                    case 'radio':
+                                                        foreach($value['options'] as $options) {
+                                                    ?>
+                                                        <label class="radio">
+                                                            <input type="radio" value="<?php echo $options['value']; ?>">
+                                                            <?php echo $options['label']; ?>
+                                                        </label>
+                                                    <?php 
+                                                        }
+                                                        break;
+                                                }
+                                            ?>
+                                        </div>
+                                    </fieldset>
+                            <?php } ?>
+                        </form>
+					<?php
+				}
+			}
+		?>
         </div>
         <footer>
 			<p>&copy; Felix Imperial <a href="#head">Top of page</a></p>
