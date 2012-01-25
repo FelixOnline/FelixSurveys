@@ -1,0 +1,38 @@
+{ 
+    "sex": {
+        "label": "Are you male or female",
+        "type": "radio",
+        "options": [
+            {
+                "value": "male",
+                "label": "Male"
+            },
+            {
+                "value": "female",
+                "label": "Memale"
+            }
+        ]
+    },
+    "age": {
+        "label": "What age are you",
+        "type": "dropdown",
+        "options": [
+            { 
+                "value": "17",
+                "label" : "17"
+            }, 
+            {
+                "value": "18",
+                "label": "18"
+            },
+            {
+                "value": "19",
+                "label": "19"
+            },
+            {
+                "value": "20",
+                "label": "20"
+            }
+        ]
+    }
+}

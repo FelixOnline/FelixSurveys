@@ -44,7 +44,7 @@
         </header>
         <div role="main" id="main">
         <?php
-            if (!isset($_SESSION['felix_sex_survey']) || !$_SESSION['felix_sex_survey']['uname']) {
+           /* if (!isset($_SESSION['felix_sex_survey']) || !$_SESSION['felix_sex_survey']['uname']) {
                 if ($_POST['login']) {
                     if (pam_auth($_POST['uname'],$_POST['pass'])) {
                         $_SESSION['felix_sex_survey'] = strtolower($_POST['uname']);
@@ -52,7 +52,7 @@
                     else
                         echo "<p>Authentication failed. Please go back and try again.</p>";
                     }
-                else {
+                else { */
         ?>
             <form method="post" id="loginForm">
                 <p>Please enter your username/password to continue:</p>
@@ -63,7 +63,7 @@
                 </table>
             </form>	
         <?php
-                }
+                /*}
         }
     if (isset($_SESSION['felix_sex_survey'])) {
         $id = sha1(md5($_SESSION['felix_sex_survey']));
@@ -83,13 +83,49 @@
         if ($match > 0) {
             echo "<div id='thankyou'><img src='thumbsup.jpg' width='200px'/><p>Thank you for submitting your answers to this survey. Your data will be deleted as soon after the survey as results have been aggregated.</p></div>";
         }
-        else {
+        else { */
 ?>
-        <form method="post">
 
+    <?php
+        $questions = file_get_contents('questions.json');
+        $questions = json_decode($questions, true);
+    ?>
+        <form method="post">
+            <?php 
+                foreach($questions as $key => $value) { ?>
+                    <fieldset class="control-group" id="<?php echo $key; ?>">
+                        <label><?php echo $value['label']; ?>:</label>
+                        <div class="controls">
+                            <?php
+                                switch($value['type']) {
+                                    case 'dropdown':
+                                        ?>
+                                        <select>
+                                            <?php foreach($value['options'] as $option) { ?>
+                                                <option value="<?php echo $option['value']; ?>">
+                                                    <?php echo $option['label'];?>
+                                                </option>
+                                            <?php } ?>
+                                        </select>
+                                    <?php break;  
+                                    case 'radio':
+                                        foreach($value['options'] as $options) {
+                                    ?>
+                                        <label class="radio">
+                                            <input type="radio" value="<?php echo $options['value']; ?>">
+                                            <?php echo $options['label']; ?>
+                                        </label>
+                                    <?php 
+                                        }
+                                        break;
+                                }
+                            ?>
+                        </div>
+                    </fieldset>
+            <?php } ?>
         </form>
 <?php
-        } }
+/*} } */
 ?>
 
         </div>
