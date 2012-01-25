@@ -28,3 +28,9 @@
 		}
 		return pam_auth($uname, $pass);
 	}
+
+    function outputclasses($classes) {
+        foreach($classes as $class) {
+            echo $class.' ';
+        }
+    }

@@ -1,15 +1,21 @@
 { 
+    "basicinfo": {
+        "label": "Basic Info",
+        "type": "header"
+    },
     "sex": {
         "label": "Are you male or female",
         "type": "radio",
         "options": [
             {
                 "value": "male",
-                "label": "Male"
+                "label": "Male",
+                "name": "sex"
             },
             {
                 "value": "female",
-                "label": "Memale"
+                "label": "Female",
+                "name": "sex"
             }
         ]
     },
@@ -32,6 +38,20 @@
             {
                 "value": "20",
                 "label": "20"
+            }
+        ]
+    },
+    "dependant": {
+        "dependant": {
+            "id": "age",
+            "answer": "18"
+        },
+        "label": "Test dependant",
+        "type": "dropdown",
+        "options": [
+            {
+                "value": "hello",
+                "label": "world"
             }
         ]
     }

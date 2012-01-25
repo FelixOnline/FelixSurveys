@@ -101,8 +101,18 @@
                     ?>
                         <form method="post">
                             <?php 
-                                foreach($questions as $key => $value) { ?>
-                                    <fieldset class="control-group" id="<?php echo $key; ?>">
+                                foreach($questions as $key => $value) { 
+                                    if($value['type'] == 'header') { ?>
+                                        <h3><?php echo $value['label'];?></h3>
+                                        <hr/>
+                                    <?php } else { 
+                                        $classes = array('control-group');
+                                        if($value['dependant']) {
+                                            $classes[] = 'hidden';
+                                            $classes[] = 'dependant';
+                                        }
+                                        ?>
+                                    <fieldset id="<?php echo $key; ?>" class="<?php outputclasses($classes); ?>" <?php if($value['dependant']) { ?> data-dependant="<?php echo $value['dependant']['id']; ?>" data-answer="<?php echo $value['dependant']['answer']; ?>"<?php } ?>>
                                         <label><?php echo $value['label']; ?>:</label>
                                         <div class="controls">
                                             <?php
@@ -121,7 +131,7 @@
                                                         foreach($value['options'] as $options) {
                                                     ?>
                                                         <label class="radio">
-                                                            <input type="radio" value="<?php echo $options['value']; ?>">
+                                                        <input type="radio" value="<?php echo $options['value']; ?>" name="<?php echo $options['name']; ?>">
                                                             <?php echo $options['label']; ?>
                                                         </label>
                                                     <?php 
@@ -131,7 +141,8 @@
                                             ?>
                                         </div>
                                     </fieldset>
-                            <?php } ?>
+                                    <?php } 
+                                } ?>
                         </form>
 					<?php
 				}
