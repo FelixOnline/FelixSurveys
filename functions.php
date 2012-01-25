@@ -4,13 +4,13 @@
 
 	// Mark a user as having completed the survey
 	function markasdone($uname) {
-		$sql = "INSERT INTO `sexsurvey_completers` (id, uname) VALUES (NULL, '".mysql_real_escape_string($uname)."')";
+		$sql = "INSERT INTO `sexsurvey_completers` (-uname) VALUES ('".mysql_real_escape_string(sha1($uname))."')";
 		return mysql_query($sql);
 	}
 
 	// Check to see if a user has completed the survey
 	function isdone($uname) {
-		$sql = "SELECT COUNT(*) FROM `sexsurvey_completers` WHERE uname='".mysql_real_escape_string($uname)."'";
+		$sql = "SELECT COUNT(*) FROM `sexsurvey_completers` WHERE uname='".mysql_real_escape_string(sha1($uname))."'";
 		$rsc = mysql_query($sql);
 		list($match) = mysql_fetch_array($rsc);
 		if ($match > 0) {
