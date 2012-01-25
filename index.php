@@ -30,6 +30,7 @@
        Respond is a polyfill for min/max-width media queries. Modernizr enables HTML5 elements & feature detects; 
        for optimal performance, create your own custom Modernizr build: www.modernizr.com/download/ -->
     <script src="js/libs/modernizr-2.0.6.min.js"></script>
+
 </head>
 <?php
 		require('functions.php');
@@ -48,7 +49,21 @@
         </header>
         <div role="main" id="main">
         <h2>Introduction</h2>
-        <p>Introductory text here</p>
+        <p>Thank you for agreeing to take part in this year’s Felix Sex Survey. After the success of last year’s, we’re looking forward to seeing if and how any characteristics have changed. As with last year, the results are completely confidential. For complete information on the privacy and data protection, click the button below. In brief, your username is only required to prevent trolling and restrict the questionnaire to Imperial students. At no point will it be possible for your answer to be matched to you.</p>
+        <p><a data-toggle="modal" href="#more-details" >More information</a></p>
+        <div id="more-details" class="modal hide fade" >
+			  <div class="modal-header">
+			    <a href="#" class="close" data-dismiss="modal">×</a>
+			    <h3>Further Privacy Information</h3>
+			  </div>
+			  <div class="modal-body">
+			    <p>Your college log-in is encoded and stored in a database on a secure union server completely separate to the database that stores your questionnaire answers. Your user name is stored simply so the computer knows that you have completed the survey. At no point will this list of usernames be seen by anyone from Felix, the Union or the College (and as it’s encoded, even if they did see it, it wouldn’t mean much). Once the survey is finished (10th February) the user name database will be deleted, and the questionnaire answers will then be made available to the select group of Felix writers who will be analysing them. The data will only be stored on Felix’s computers and will be transferred by secure College file-exchange. At no point will personal computers or USB sticks be used.</p>
+			    <p>To reiterate: at no point will it be possible for your questionnaire answers to be matched to you.</p>
+			    <p>Furthermore, once the article has been printed (17th February) all remaining data will be deleted. </p>
+			  </div>
+			  <div class="modal-footer">
+			  </div>
+        </div>
         <?php
         	if (array_key_exists('login', $_POST)) {
         		// attempting to login
@@ -64,8 +79,8 @@
 				// not logged in? display login form
 				?>
 	            <form method="post" id="loginForm" class="form-horizontal">
-	                <legend>Please enter your username/password to continue:</legend>
-	                <p>Why we get these details info text</p>
+	                <legend>Please enter your username/password to continue</legend>
+	                <p>This information is only used to see if you have previously completed the survey. It will <strong>not</strong> be tied to your account. See above for further details.</p>
                     <fieldset class="control-group">
                         <label for="uname">IC Username:</label>
                         <div class="controls">
@@ -98,6 +113,10 @@
                     ?>
                         <form method="post">
 							<input type="hidden" name="real_department" value="<?php echo getdept($_SESSION['felix_sex_survey']['uname']); ?>" />
+							<h3>Background information</h3>
+							<p>If you don’t want to answer any question, just leave it blank. At the end of the survey you will be asked confirm the questions you’ve left blank (to make sure they’re blank intentionally and not just overlooked).</p>
+							<p>This questionnaire should take no more that 10 minutes. The number of questions varies depending on previous answers but the maximum number is 30.</p>
+							<p>While this is a light-hearted exercise, honesty is encouraged. We would like reiterate again that your results are completely anonymous. Any concerns may be addressed to <a href="mailto: felix@imperial.ac.uk">felix@imperial.ac.uk</a></p>
                             <?php 
                                 foreach($questions as $key => $value) { 
                                     if($value['type'] == 'header') { ?>
@@ -158,6 +177,9 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 
+    <script src="js/bootstrap-modal.js"></script>
+    <script src="js/bootstrap-tooltip.js"></script>
+    <script src="js/bootstrap-popover.js"></script>
 
     <!-- scripts concatenated and minified via build script -->
     <script defer src="js/plugins.js"></script>
