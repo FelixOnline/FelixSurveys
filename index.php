@@ -105,12 +105,12 @@
                                         <hr/>
                                     <?php } else { 
                                         $classes = array('control-group');
-                                        if($value['dependant']) {
+                                        if(array_key_exists('dependant', $value)) {
                                             $classes[] = 'hidden';
                                             $classes[] = 'dependant';
                                         }
                                         ?>
-                                    <fieldset id="<?php echo $key; ?>" class="<?php outputclasses($classes); ?>" <?php if($value['dependant']) { ?> data-dependant="<?php echo $value['dependant']['id']; ?>" data-answer="<?php echo $value['dependant']['answer']; ?>"<?php } ?>>
+                                    <fieldset id="<?php echo $key; ?>" class="<?php outputclasses($classes); ?>" <?php if(array_key_exists('dependant', $value)) { ?> data-dependant="<?php echo $value['dependant']['id']; ?>" data-answer="<?php echo $value['dependant']['answer']; ?>"<?php } ?>>
                                         <label><?php echo $value['label']; ?>:</label>
                                         <div class="controls">
                                             <?php
