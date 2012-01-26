@@ -12,13 +12,13 @@ $(document).ready(function() {
                 $.each(value.dependencies, function(i, dep) {
                     if(needle == dep.id) {
                         if(value.reverse == true) {
-                            if(answer != dep.answer) {
+                            if(answer != dep.value) {
                                 dep.satisfied = true;
                             } else {
                                 dep.satisfied = false;
                             }
                         } else {
-                            if(answer == dep.answer) {
+                            if(answer == dep.value) {
                                 dep.satisfied = true;
                             } else {
                                 dep.satisfied = false;
