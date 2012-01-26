@@ -38,8 +38,6 @@
         session_start();
 
         require('db.php');
-
-		$local = true;
 ?>
 <body>
     <div class="container">
