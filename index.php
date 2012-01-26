@@ -37,9 +37,8 @@
         session_name("felix_sex_survey");
         session_start();
 
-        mysql_connect("localhost", 'root', '');
-        mysql_select_db('sexsurvey');
-		
+        require('db.php');
+
 		$local = true;
 ?>
 <body>
@@ -113,12 +112,26 @@
                             <form method="post" class="form-horizontal">
                                 <?php 
                                     foreach($questions as $key => $value) { 
-                                        if($value['type'] == 'header') { ?>
-                                            <legend><?php echo $value['label'];?></legend>
+                                        if($value['type'] == 'header') {
+                                            $classes = array();
+                                            if(array_key_exists('dependencies', $value)) {
+                                                $classes[] = 'hidden';
+                                                $classes[] = 'dependant';
+                                            } ?>
+                                            <legend class="<?php outputclasses($classes);?>" 
+                                                <?php if(array_key_exists('dependencies', $value)) { ?> 
+                                                    data-dependencies='<?php echo json_encode($value['dependencies']); ?>' 
+                                                    <?php if(array_key_exists('reverse', $value)) { ?>
+                                                        data-reverse='true'
+                                                    <?php }?>
+                                                <?php } ?>
+                                            >
+                                                <?php echo $value['label'];?>
+                                            </legend>
                                         <?php } else { 
                                             $classes = array('control-group');
                                             /*
-                                            if(array_key_exists('dependant', $value)) {
+                                            if(array_key_exists('dependencies', $value)) {
                                             	if (!array_key_exists('default', $questions[$value['dependant']['id']]) || $questions[$value['dependant']['id']]['default'] != $value['dependant']['answer']) {
                                                 	$classes[] = 'hidden';
 												}
@@ -128,7 +141,14 @@
                                                 $classes[] = 'dependant';
                                             }
                                             ?>
-                                        <fieldset id="<?php echo $key; ?>" class="<?php outputclasses($classes); ?>" <?php if(array_key_exists('dependencies', $value)) { ?> data-dependencies='<?php echo json_encode($value['dependencies']); ?>'<?php } ?>>
+                                        <fieldset id="<?php echo $key; ?>" class="<?php outputclasses($classes); ?>" 
+                                            <?php if(array_key_exists('dependencies', $value)) { ?> 
+                                                data-dependencies='<?php echo json_encode($value['dependencies']); ?>'
+                                                    <?php if(array_key_exists('reverse', $value)) { ?>
+                                                        data-reverse='true'
+                                                    <?php }?>
+                                            <?php } ?>
+                                        >
                                             <label<?php if ($value['type'] !== 'radio'): ?> for="cont_<?php echo $value['name']; ?>"<?php endif; ?>><?php echo $value['label']; ?></label>
                                             <div class="controls">
                                                 <?php

@@ -11,10 +11,18 @@ $(document).ready(function() {
                 var satisfied = [];
                 $.each(value.dependencies, function(i, dep) {
                     if(needle == dep.id) {
-                        if(answer == dep.answer) {
-                            dep.satisfied = true;
+                        if(value.reverse == true) {
+                            if(answer != dep.answer) {
+                                dep.satisfied = true;
+                            } else {
+                                dep.satisfied = false;
+                            }
                         } else {
-                            dep.satisfied = false;
+                            if(answer == dep.answer) {
+                                dep.satisfied = true;
+                            } else {
+                                dep.satisfied = false;
+                            }
                         }
                     }
                     if(dep.satisfied == true) {
@@ -51,7 +59,14 @@ $(document).ready(function() {
     $.each($('.dependant'), function(key, value) {
         var dependencies = $(value).data('dependencies');
         if(dependencies) {
-            dependant.push({dependencies: dependencies, element: value});
+            var obj = {
+                dependencies: dependencies,
+                element: value
+            }
+            if($(value).data('reverse')) {
+                obj.reverse = true;
+            }
+            dependant.push(obj);
         }
     });
 
@@ -81,6 +96,13 @@ $(document).ready(function() {
         $.each(questions, function(key, value) {
             $(value).css('visibility', 'visible').fadeIn(200);
         });
+    });
+
+    /*
+     * On load trigger change event on all inputs
+     */
+    $.each($('input, select'), function(key, value) {
+        $(value).trigger('change');
     });
 
     $("a[rel=popover]")
