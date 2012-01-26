@@ -37,9 +37,8 @@
         session_name("felix_sex_survey");
         session_start();
 
-        mysql_connect("localhost", 'root', '');
-        mysql_select_db('sexsurvey');
-		
+        require('db.php');
+
 		$local = true;
 ?>
 <body>
