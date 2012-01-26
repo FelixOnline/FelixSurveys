@@ -8,6 +8,7 @@
         "type": "radio",
         "default": "anon",
         "name": "sex",
+        "inline": true,
         "options": [
             {
                 "value": "male",
@@ -204,6 +205,7 @@
         "type": "radio",
         "default": "anon",
         "name": "relationship",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -230,6 +232,7 @@
         "type": "radio",
         "default": "anon",
         "name": "relationshipimperial",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -250,6 +253,7 @@
         "type": "radio",
         "default": "anon",
         "name": "everimperial",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -546,6 +550,7 @@
         "type": "radio",
         "default": "anon",
         "name": "unprotected",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -605,6 +610,7 @@
         "type": "radio",
         "default": "anon",
         "name": "sti",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -625,6 +631,7 @@
         "type": "radio",
         "default": "anon",
         "name": "sticlinic",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -649,6 +656,7 @@
         "type": "radio",
         "default": "anon",
         "name": "orientation",
+        "inline": true,
         "options": [
             {
                 "value": "heterosexual",
@@ -677,6 +685,7 @@
         "type": "radio",
         "default": "anon",
         "name": "homokiss",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -697,6 +706,7 @@
         "type": "radio",
         "default": "anon",
         "name": "homosex",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -793,6 +803,7 @@
         "type": "radio",
         "default": "anon",
         "name": "campussex",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -810,21 +821,100 @@
     },
     "campuswhere": {
         "label": "<strong>18 part 2</strong> - Where?",
-        "type": "radio",
-        "default": "anon",
+        "type": "checkbox",
         "name": "campuswhere",
         "options": [
             {
-                "value": "yes",
-                "label": "Yes"
+                "value": "aero",
+                "label": "Aero"
             },
             {
-                "value": "no",
-                "label": "No"
+                "value": "bessemer",
+                "label": "Bessemer"
             },
             {
-            	"value": "anon",
-            	"label": "Don't wish to say"
+                "value": "blackett",
+                "label": "Blackett"
+            },
+            {
+                "value": "business",
+                "label": "Business School"
+            },
+            {
+                "value": "chemistry",
+                "label": "Chemistry"
+            },
+            {
+                "value": "eastside",
+                "label": "Eastside Bar"
+            },
+            {
+                "value": "eee",
+                "label": "EEE"
+            },
+            {
+                "value": "huxley",
+                "label": "Huxley"
+            },
+            {
+                "value": "library",
+                "label": "Library"
+            },
+            {
+                "value": "mecheng",
+                "label": "MechEng"
+            },
+            {
+                "value": "rsm",
+                "label": "RSM"
+            },
+            {
+                "value": "saf",
+                "label": "SAF"
+            },
+            {
+                "value": "sherfield",
+                "label": "Sherfield"
+            },
+            {
+                "value": "skempton",
+                "label": "Skempton"
+            },
+            {
+                "value": "unionbars",
+                "label": "Union Bars"
+            },
+            {
+                "value": "unionoffices",
+                "label": "Union Offices"
+            },
+            {
+                "value": "wolfson",
+                "label": "Wolfson/Flowers"
+            },
+            {
+                "value": "halls",
+                "label": "Halls of Residence Communal Spaces"
+            },
+            {
+                "value": "reynolds",
+                "label": "Reynold's Bar"
+            },
+            {
+                "value": "ethospool",
+                "label": "Ethos Pool"
+            },
+            {
+                "value": "ethosgym",
+                "label": "Ethos Gym"
+            },
+            {
+                "value": "lawn",
+                "label": "Queen's Lawn"
+            },
+            {
+                "value": "gardens",
+                "label": "Princes' Gardens/Secret Garden"
             }
         ]
     },
@@ -833,6 +923,7 @@
         "type": "radio",
         "default": "anon",
         "name": "threesome",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -853,6 +944,7 @@
         "type": "radio",
         "default": "anon",
         "name": "3-youask",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -873,6 +965,7 @@
         "type": "radio",
         "default": "anon",
         "name": "3-asked",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -893,6 +986,7 @@
         "type": "radio",
         "default": "anon",
         "name": "anal",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -913,6 +1007,7 @@
         "type": "radio",
         "default": "anon",
         "name": "anal-youask",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -933,6 +1028,7 @@
         "type": "radio",
         "default": "anon",
         "name": "anal-asked",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -957,6 +1053,7 @@
         "type": "radio",
         "default": "anon",
         "name": "sexhappy",
+        "inline": true,
         "options": [
             {
                 "value": "veryhappy",
@@ -989,6 +1086,7 @@
         "type": "radio",
         "default": "anon",
         "name": "sexculture",
+        "inline": true,
         "options": [
             {
                 "value": "strongly",
@@ -1020,7 +1118,8 @@
         "label": "<strong>27</strong> - Do you agree or disagree that being at Imperial negatively affects your sex life?<br /><a href=\"#\" rel=\"popover\" data-content=\"Strongly agree means that being at Imperial negatively affects your sex life\" data-original-title=\"Imperial and your sex life\">More information</a>",
         "type": "radio",
         "default": "anon",
-        "name": "sexculture",
+        "name": "seximperial",
+        "inline": true,
         "options": [
             {
                 "value": "strongly",
@@ -1053,6 +1152,7 @@
         "type": "radio",
         "default": "anon",
         "name": "sexsatisfaction",
+        "inline": true,
         "options": [
             {
                 "value": "strongly",
