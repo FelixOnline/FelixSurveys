@@ -81,6 +81,7 @@
                         </form>
                     <?php
                 } else {
+                	echo 'Department: '.getdept($_SESSION['felix_sex_survey']['uname']);
                     if (isdone($_SESSION['felix_sex_survey']['uname'])) {
                     	?>
                         <div class="alert alert-block alert-success">
