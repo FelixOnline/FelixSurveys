@@ -43,6 +43,10 @@
                 "label": "19"
             },
             {
+                "value": "20",
+                "label": "20"
+            },
+            {
                 "value": "21",
                 "label": "21"
             },
@@ -902,6 +906,18 @@
                 "label": "EEE"
             },
             {
+                "value": "ethosgym",
+                "label": "Ethos Gym"
+            },
+            {
+                "value": "ethospool",
+                "label": "Ethos Pool"
+            },
+            {
+                "value": "halls",
+                "label": "Halls of Residence Communal Spaces"
+            },
+            {
                 "value": "huxley",
                 "label": "Huxley"
             },
@@ -912,6 +928,18 @@
             {
                 "value": "mecheng",
                 "label": "MechEng"
+            },
+            {
+                "value": "gardens",
+                "label": "Princes' Gardens/Secret Garden"
+            },
+            {
+                "value": "lawn",
+                "label": "Queen's Lawn"
+            },
+            {
+                "value": "reynolds",
+                "label": "Reynold's Bar"
             },
             {
                 "value": "rsm",
@@ -940,30 +968,6 @@
             {
                 "value": "wolfson",
                 "label": "Wolfson/Flowers"
-            },
-            {
-                "value": "halls",
-                "label": "Halls of Residence Communal Spaces"
-            },
-            {
-                "value": "reynolds",
-                "label": "Reynold's Bar"
-            },
-            {
-                "value": "ethospool",
-                "label": "Ethos Pool"
-            },
-            {
-                "value": "ethosgym",
-                "label": "Ethos Gym"
-            },
-            {
-                "value": "lawn",
-                "label": "Queen's Lawn"
-            },
-            {
-                "value": "gardens",
-                "label": "Princes' Gardens/Secret Garden"
             }
         ]
     },
