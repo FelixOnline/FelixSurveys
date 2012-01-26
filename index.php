@@ -94,7 +94,7 @@
                     } elseif(array_key_exists('response', $_POST)) {
                         if(array_key_exists('response', $_POST)) {
                         	$troll = 1;
-                        	if ($_POST['department'] == getdept($_SESSION['felix_sex_survey']['uname']) || getdept($_SESSION['felix_sex_survey']['uname']) == 'Unknown') {
+                        	if ($_POST['department'] == 'anon' || strtolower(str_replace('_', ' ', $_POST['department'])) == strtolower(getdept($_SESSION['felix_sex_survey']['uname'])) || getdept($_SESSION['felix_sex_survey']['uname']) == 'Unknown') {
                         		$troll = 0;
                         	}
                             addresponse(json_encode($_POST), $troll);
