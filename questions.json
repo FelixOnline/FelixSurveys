@@ -6,6 +6,7 @@
     "sex": {
         "label": "Are you male or female?",
         "type": "radio",
+        "default": "male",
         "options": [
             {
                 "value": "male",
@@ -23,6 +24,7 @@
         "label": "What age are you?",
         "type": "dropdown",
         "name": "age",
+        "default": "18",
         "options": [
             { 
                 "value": "17",

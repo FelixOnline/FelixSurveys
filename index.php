@@ -131,7 +131,7 @@
                                                             ?>
                                                                 <select name="<?php echo $value['name']; ?>" id="cont_<?php echo $value['name']; ?>">
                                                                 <?php foreach($value['options'] as $option) { ?>
-                                                                    <option value="<?php echo $option['value']; ?>">
+                                                                    <option value="<?php echo $option['value']; ?>"<?php if(array_key_exists('default', $value) && $value['default'] == $option['value']): ?> selected="selected"<?php endif; ?>>
                                                                         <?php echo $option['label'];?>
                                                                     </option>
                                                                 <?php } ?>
@@ -141,7 +141,7 @@
                                                             foreach($value['options'] as $options) {
                                                         ?>
                                                             <label class="radio">
-                                                            <input type="radio" value="<?php echo $options['value']; ?>" name="<?php echo $options['name']; ?>">
+                                                            <input type="radio" value="<?php echo $options['value']; ?>" name="<?php echo $options['name']; ?>"<?php if(array_key_exists('default', $value) && $value['default'] == $options['value']): ?> checked="checked"<?php endif; ?>>
                                                                 <?php echo $options['label']; ?>
                                                             </label>
                                                         <?php 
