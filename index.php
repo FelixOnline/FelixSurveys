@@ -97,7 +97,6 @@
                         	}
                             addresponse(json_encode($_POST), $troll);
                             markasdone($_SESSION['felix_sex_survey']['uname']);
-                            var_dump($_POST['campuswhere']);
                         } ?>
                         <div class="alert alert-block alert-success">
                             <h4 class="alert-heading">Thank you!</h4>
