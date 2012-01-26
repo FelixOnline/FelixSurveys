@@ -866,7 +866,7 @@
         ]
     },
     "campuswhere": {
-        "label": "<strong>18</strong> - Where on campus have you had sex? Tick all that apply.",
+        "label": "<strong>18</strong> - Where on campus have you had sex? Tick all that apply. Please note that private rooms in halls do not count.",
         "type": "checkbox",
         "name": "campuswhere",
         "dependencies": [
@@ -968,6 +968,10 @@
             {
                 "value": "wolfson",
                 "label": "Wolfson/Flowers"
+            },
+            {
+                "value": "other",
+                "label": "Other"
             }
         ]
     },
