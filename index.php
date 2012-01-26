@@ -118,7 +118,14 @@
                                                 $classes[] = 'hidden';
                                                 $classes[] = 'dependant';
                                             } ?>
-                                            <legend class="<?php outputclasses($classes);?>" <?php if(array_key_exists('dependencies', $value)) { ?> data-dependencies='<?php echo json_encode($value['dependencies']); ?>'<?php } ?>>
+                                            <legend class="<?php outputclasses($classes);?>" 
+                                                <?php if(array_key_exists('dependencies', $value)) { ?> 
+                                                    data-dependencies='<?php echo json_encode($value['dependencies']); ?>' 
+                                                    <?php if(array_key_exists('reverse', $value)) { ?>
+                                                        data-reverse='true'
+                                                    <?php }?>
+                                                <?php } ?>
+                                            >
                                                 <?php echo $value['label'];?>
                                             </legend>
                                         <?php } else { 
@@ -134,7 +141,14 @@
                                                 $classes[] = 'dependant';
                                             }
                                             ?>
-                                        <fieldset id="<?php echo $key; ?>" class="<?php outputclasses($classes); ?>" <?php if(array_key_exists('dependencies', $value)) { ?> data-dependencies='<?php echo json_encode($value['dependencies']); ?>'<?php } ?>>
+                                        <fieldset id="<?php echo $key; ?>" class="<?php outputclasses($classes); ?>" 
+                                            <?php if(array_key_exists('dependencies', $value)) { ?> 
+                                                data-dependencies='<?php echo json_encode($value['dependencies']); ?>'
+                                                    <?php if(array_key_exists('reverse', $value)) { ?>
+                                                        data-reverse='true'
+                                                    <?php }?>
+                                            <?php } ?>
+                                        >
                                             <label<?php if ($value['type'] !== 'radio'): ?> for="cont_<?php echo $value['name']; ?>"<?php endif; ?>><?php echo $value['label']; ?></label>
                                             <div class="controls">
                                                 <?php

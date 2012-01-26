@@ -11,10 +11,18 @@ $(document).ready(function() {
                 var satisfied = [];
                 $.each(value.dependencies, function(i, dep) {
                     if(needle == dep.id) {
-                        if(answer == dep.answer) {
-                            dep.satisfied = true;
+                        if(value.reverse == true) {
+                            if(answer != dep.answer) {
+                                dep.satisfied = true;
+                            } else {
+                                dep.satisfied = false;
+                            }
                         } else {
-                            dep.satisfied = false;
+                            if(answer == dep.answer) {
+                                dep.satisfied = true;
+                            } else {
+                                dep.satisfied = false;
+                            }
                         }
                     }
                     if(dep.satisfied == true) {
@@ -51,12 +59,18 @@ $(document).ready(function() {
     $.each($('.dependant'), function(key, value) {
         var dependencies = $(value).data('dependencies');
         if(dependencies) {
-            dependant.push({dependencies: dependencies, element: value});
+            var obj = {
+                dependencies: dependencies,
+                element: value
+            }
+            if($(value).data('reverse')) {
+                obj.reverse = true;
+            }
+            dependant.push(obj);
         }
     });
 
     $('input, select').change(function(event) {
-        log('trigger');
         var answer;
         switch(this.tagName) {
             case 'SELECT':
