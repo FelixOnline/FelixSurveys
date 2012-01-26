@@ -39,7 +39,7 @@ $(document).ready(function() {
          * Reset all dependant questions
          */
         $.each(dependant.find($(this).parents('fieldset').attr('id')), function(key, value) {
-            $(value).hide();
+            $(value).fadeOut(200);
         });
 
         var questions = dependant.find(
