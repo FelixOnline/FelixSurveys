@@ -865,8 +865,36 @@
             }
         ]
     },
+    "campussex": {
+        "label": "<strong>18 part 1</strong> - Have you ever had sex on campus?",
+        "type": "radio",
+        "default": "anon",
+        "name": "campussex",
+        "dependencies": [
+        	{
+        		"id": "virginity",
+        		"value": "virgin"
+        	}
+        ],
+        "reverse": true,
+        "inline": true,
+        "options": [
+            {
+                "value": "yes",
+                "label": "Yes"
+            },
+            {
+                "value": "no",
+                "label": "No"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say"
+            }
+        ]
+    },
     "campuswhere": {
-        "label": "<strong>18</strong> - Where on campus have you had sex? Tick all that apply. Please note that private rooms in halls do not count.",
+        "label": "<strong>18 part 2</strong> - If you answered yes above, where on campus have you had sex? Tick all that apply. Please note that private rooms in halls do not count.",
         "type": "checkbox",
         "name": "campuswhere",
         "dependencies": [
@@ -915,7 +943,7 @@
             },
             {
                 "value": "halls",
-                "label": "Halls of Residence Communal Spaces"
+                "label": "Halls of Residence Communal Spaces/Shared Bathrooms"
             },
             {
                 "value": "huxley",
@@ -962,8 +990,12 @@
                 "label": "Union Bars"
             },
             {
+                "value": "unionminibuses",
+                "label": "Union Minibuses"
+            },
+            {
                 "value": "unionoffices",
-                "label": "Union Offices"
+                "label": "Union Offices/Dining Hall/Concert Hall/West Basement/East Basement"
             },
             {
                 "value": "wolfson",
@@ -1186,7 +1218,7 @@
         ]
     },
     "seximperial": {
-        "label": "<strong>27</strong> - Do you agree or disagree that being at Imperial negatively affects your sex life?<br /><a href=\"#\" rel=\"popover\" data-content=\"Strongly agree means that being at Imperial negatively affects your sex life\" data-original-title=\"Imperial and your sex life\">More information</a>",
+        "label": "<strong>27</strong> - Do you feel that being at Imperial negatively affects your sex life?",
         "type": "radio",
         "default": "anon",
         "name": "seximperial",
@@ -1194,23 +1226,23 @@
         "options": [
             {
                 "value": "strongly",
-                "label": "Strongly agree"
+                "label": "Strongly"
             },
             {
                 "value": "somewhat",
-                "label": "Agree"
+                "label": "Somewhat"
             },
             {
                 "value": "slightly",
-                "label": "Indifferent"
+                "label": "Slightly"
             },
             {
                 "value": "notreally",
-                "label": "Disagree"
+                "label": "Not really"
             },
             {
                 "value": "notatall",
-                "label": "Strongly disagree"
+                "label": "Quite the contrary"
             },
             {
             	"value": "anon",
@@ -1219,7 +1251,7 @@
         ]
     },
     "sexsatisfaction": {
-        "label": "<strong>28</strong> - Do you agree or disagree that your sex life at Imperial has negatively affected your “Student Satisfaction”?<br /><a href=\"#\" rel=\"popover\" data-content=\"Strongly agree means your lousy sex life makes you resent and hate Imperial :-(\" data-original-title=\"Student Satisfaction\">More information</a>",
+        "label": "<strong>28</strong> - Has your sex life at Imperial has negatively affected your “Student Satisfaction”?",
         "type": "radio",
         "default": "anon",
         "name": "sexsatisfaction",
@@ -1227,23 +1259,23 @@
         "options": [
             {
                 "value": "strongly",
-                "label": "Strongly agree"
+                "label": "Strongly"
             },
             {
                 "value": "somewhat",
-                "label": "Agree"
+                "label": "Somewhat"
             },
             {
                 "value": "slightly",
-                "label": "Indifferent"
+                "label": "Slightly"
             },
             {
                 "value": "notreally",
-                "label": "Disagree"
+                "label": "Not really"
             },
             {
                 "value": "notatall",
-                "label": "Strongly disagree"
+                "label": "Quite the contrary"
             },
             {
             	"value": "anon",
