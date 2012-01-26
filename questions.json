@@ -932,21 +932,19 @@
         "label": "<strong>24</strong> - Have you ever been asked for anal sex?",
         "type": "radio",
         "default": "anon",
+        "name": "anal-asked",
         "options": [
             {
                 "value": "yes",
-                "label": "Yes",
-                "name": "anal-asked"
+                "label": "Yes"
             },
             {
                 "value": "no",
-                "label": "No",
-                "name": "anal-asked"
+                "label": "No"
             },
             {
             	"value": "anon",
-            	"label": "Don't wish to say",
-            	"name": "anal-asked"
+            	"label": "Don't wish to say"
             }
         ]
     },
@@ -986,31 +984,95 @@
             }
         ]
     },
-    "sexnegativity": {
-        "label": "<strong>26</strong> - Do you feel that being at Imperial negatively affects your sex life?",
+    "sexculture": {
+        "label": "<strong>26</strong> - Do cultural and/or religious reasons affect your sex life?",
         "type": "radio",
         "default": "anon",
-        "name": "sexnegativity",
+        "name": "sexculture",
         "options": [
             {
-                "value": "veryhappy",
-                "label": "Very Happy"
+                "value": "strongly",
+                "label": "Strongly"
             },
             {
-                "value": "happy",
-                "label": "Happy"
+                "value": "somewhat",
+                "label": "Somewhat"
             },
             {
-                "value": "meh",
-                "label": "Meh"
+                "value": "slightly",
+                "label": "Slightly"
             },
             {
-                "value": "unhappy",
-                "label": "Unhappy"
+                "value": "notreally",
+                "label": "Not really"
             },
             {
-                "value": "vunhappy",
-                "label": "Very Unhappy"
+                "value": "notatall",
+                "label": "Not at all"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say"
+            }
+        ]
+    },
+    "seximperial": {
+        "label": "<strong>27</strong> - Do you agree or disagree that being at Imperial negatively affects your sex life?<br /><a href=\"#\" rel=\"popover\" data-content=\"Strongly agree means that being at Imperial negatively affects your sex life\" data-original-title=\"Imperial and your sex life\">More information</a>",
+        "type": "radio",
+        "default": "anon",
+        "name": "sexculture",
+        "options": [
+            {
+                "value": "strongly",
+                "label": "Strongly agree"
+            },
+            {
+                "value": "somewhat",
+                "label": "Agree"
+            },
+            {
+                "value": "slightly",
+                "label": "Indifferent"
+            },
+            {
+                "value": "notreally",
+                "label": "Disagree"
+            },
+            {
+                "value": "notatall",
+                "label": "Strongly disagree"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say"
+            }
+        ]
+    },
+    "sexsatisfaction": {
+        "label": "<strong>28</strong> - Do you agree or disagree that your sex life at Imperial has negatively affected your “Student Satisfaction”?<br /><a href=\"#\" rel=\"popover\" data-content=\"Strongly agree means your lousy sex life makes you resent and hate Imperial :-(\" data-original-title=\"Student Satisfaction\">More information</a>",
+        "type": "radio",
+        "default": "anon",
+        "name": "sexsatisfaction",
+        "options": [
+            {
+                "value": "strongly",
+                "label": "Strongly agree"
+            },
+            {
+                "value": "somewhat",
+                "label": "Agree"
+            },
+            {
+                "value": "slightly",
+                "label": "Indifferent"
+            },
+            {
+                "value": "notreally",
+                "label": "Disagree"
+            },
+            {
+                "value": "notatall",
+                "label": "Strongly disagree"
             },
             {
             	"value": "anon",

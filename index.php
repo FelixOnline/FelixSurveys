@@ -161,7 +161,7 @@
                                                             foreach($value['options'] as $option) {
                                                         ?>
                                                             <label class="radio <?php if(array_key_exists('inline', $value) && $value['inline'] == true) echo 'inline'; ?>">
-                                                            <input type="radio" value="<?php echo $option['value']; ?>" name="<?php echo $option['name']; ?>"<?php if(array_key_exists('default', $value) && $value['default'] == $option['value']): ?> checked="checked"<?php endif; ?>>
+                                                            <input type="radio" value="<?php echo $option['value']; ?>" name="<?php echo $value['name']; ?>"<?php if(array_key_exists('default', $value) && $value['default'] == $option['value']): ?> checked="checked"<?php endif; ?>>
                                                                 <?php echo $option['label']; ?>
                                                             </label>
                                                         <?php 
