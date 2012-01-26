@@ -158,11 +158,11 @@
                                                             </select>
                                                         <?php break;  
                                                         case 'radio':
-                                                            foreach($value['options'] as $options) {
+                                                            foreach($value['options'] as $option) {
                                                         ?>
-                                                            <label class="radio">
-                                                            <input type="radio" value="<?php echo $options['value']; ?>" name="<?php echo $options['name']; ?>"<?php if(array_key_exists('default', $value) && $value['default'] == $options['value']): ?> checked="checked"<?php endif; ?>>
-                                                                <?php echo $options['label']; ?>
+                                                            <label class="radio <?php if(array_key_exists('inline', $value) && $value['inline'] == true) echo 'inline'; ?>">
+                                                            <input type="radio" value="<?php echo $option['value']; ?>" name="<?php echo $option['name']; ?>"<?php if(array_key_exists('default', $value) && $value['default'] == $option['value']): ?> checked="checked"<?php endif; ?>>
+                                                                <?php echo $option['label']; ?>
                                                             </label>
                                                         <?php 
                                                             }
@@ -171,7 +171,17 @@
                                                             ?>
                                                             <textarea name="<?php echo $value['name']; ?>" id="cont_<?php echo $value['name']; ?>"></textarea>
                                                         <?php break;
-                                                    }
+                                                        case 'checkbox':
+                                                            foreach($value['options'] as $option) {
+                                                        ?>
+                                                            <label class="checkbox <?php if(array_key_exists('inline', $value) && $value['inline'] == true) echo 'inline'; ?>">
+                                                            <input type="checkbox" value="<?php echo $option['value']; ?>" name="<?php echo $value['name']; ?>"<?php if(array_key_exists('default', $value) && $value['default'] == $option['value']): ?> checked="checked"<?php endif; ?>>
+                                                                <?php echo $option['label']; ?>
+                                                            </label>
+                                                        <?php 
+                                                            }
+                                                            break;
+                                                        }
                                                 ?>
                                             </div>
                                         </fieldset>
