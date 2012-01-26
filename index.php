@@ -147,8 +147,24 @@
                                         <?php } 
                                     } ?>
                                 <fieldset class="form-actions">
-                                    <input type="submit" class="btn primary xlarge" value="Submit" name="response"/>
+                                    <a data-toggle="modal" class="btn primary xlarge" href="#submit-form" >Submit</a>
                                 </fieldset>
+                                
+								<div id="submit-form" class="modal hide fade" >
+								    <div class="modal-header">
+								        <a href="#" class="close" data-dismiss="modal">×</a>
+								        <h3>Submit survey</h3>
+								    </div>
+								    <div class="modal-body">
+								        <p>Are you sure you would like to submit this survey now?</p>
+								        <p>As this survey is anonymous, you will not be able to get back or edit your responses after they have been submitted.</p>
+								    </div>
+								    <div class="modal-footer">
+								        <input type="submit" class="btn primary xlarge" value="Yes" name="response"/>
+								        <a href="#" data-dismiss="modal" class="btn xlarge">No</a>
+								    </div>
+								</div>
+
                             </form>
                         <?php
                     }
