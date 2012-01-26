@@ -347,13 +347,27 @@
     },
     "sexlife": {
         "label": "Sex Life",
-        "type": "header"
+        "type": "header",
+        "dependencies": [
+        	{
+        		"key": "virginity",
+        		"value": "virgin"
+        	}
+        ],
+        "reverse": true
     },
     "partners": {
         "label": "<strong>7</strong> - How many sexual partners have you had?",
         "type": "dropdown",
         "name": "partners",
         "default": "anon",
+        "dependencies": [
+        	{
+        		"key": "virginity",
+        		"value": "virgin"
+        	}
+        ],
+        "reverse": true,
         "options": [
             {
                 "value": "1",
