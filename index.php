@@ -118,7 +118,9 @@
                                         <?php } else { 
                                             $classes = array('control-group');
                                             if(array_key_exists('dependant', $value)) {
-                                                $classes[] = 'hidden';
+                                            	if (!array_key_exists('default', $questions[$value['dependant']['id']]) || $questions[$value['dependant']['id']]['default'] != $value['dependant']['answer']) {
+                                                	$classes[] = 'hidden';
+												}
                                                 $classes[] = 'dependant';
                                             }
                                             ?>
