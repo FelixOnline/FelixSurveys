@@ -197,7 +197,7 @@
             }
         ]
     },
-    "basicinfo": {
+    "lovelife": {
         "label": "Love Life",
         "type": "header"
     },
@@ -346,6 +346,312 @@
             {
                 "value": "anon",
                 "label": "Don't wish to say"
+            }
+        ]
+    },
+    "sexlife": {
+        "label": "Sex Life",
+        "type": "header"
+    },
+    "partners": {
+        "label": "<strong>7</strong> - How many sexual partners have you had?",
+        "type": "dropdown",
+        "name": "partners",
+        "default": "anon",
+        "options": [
+            {
+                "value": "1",
+                "label": "1"
+            },
+            {
+                "value": "2",
+                "label": "2"
+            },
+            {
+                "value": "3",
+                "label": "3"
+            },
+            {
+                "value": "4",
+                "label": "4"
+            },
+            {
+                "value": "5",
+                "label": "5"
+            },
+            {
+                "value": "6",
+                "label": "6"
+            },
+            {
+                "value": "7",
+                "label": "7"
+            },
+            {
+                "value": "8",
+                "label": "8"
+            },
+            {
+                "value": "9",
+                "label": "9"
+            },
+            {
+                "value": "10",
+                "label": "10"
+            },
+            {
+                "value": "11",
+                "label": "11"
+            },
+            {
+                "value": "12",
+                "label": "12"
+            },
+            {
+                "value": "13",
+                "label": "13"
+            },
+            {
+                "value": "14",
+                "label": "14"
+            },
+            {
+                "value": "15",
+                "label": "15"
+            },
+            {
+                "value": "16",
+                "label": "16"
+            }, 
+            {
+                "value": "17",
+                "label": "17"
+            }, 
+            {
+                "value": "18",
+                "label": "18"
+            }, 
+            {
+                "value": "19",
+                "label": "19"
+            }, 
+            {
+                "value": "20",
+                "label": "20"
+            }, 
+            {
+                "value": "21",
+                "label": "21"
+            }, 
+            {
+                "value": "22",
+                "label": "22"
+            }, 
+            {
+                "value": "23",
+                "label": "23"
+            }, 
+            {
+                "value": "24",
+                "label": "24"
+            }, 
+            {
+                "value": "25+",
+                "label": "25 or more"
+            },
+            {
+                "value": "anon",
+                "label": "Don't wish to say"
+            }
+        ]
+    },
+    "howoften": {
+        "label": "<strong>8</strong> - How often do you have sex?",
+        "type": "dropdown",
+        "name": "howoften",
+        "default": "anon",
+        "options": [
+            { 
+                "value": "daily",
+                "label": "Daily"
+            }, 
+            {
+                "value": "manyaweek",
+                "label": "A few times a week"
+            },
+            {
+                "value": "weekly",
+                "label": "Weekly"
+            },
+            {
+                "value": "monthly",
+                "label": "Monthly"
+            },
+            {
+                "value": "yearly",
+                "label": "A few times a year"
+            },
+            {
+                "value": "lessornever",
+                "label": "Less or never"
+            },
+            {
+                "value": "anon",
+                "label": "Don't wish to say"
+            }
+        ]
+    },
+    "whenlast": {
+        "label": "<strong>9</strong> - When did you last have sex?",
+        "type": "dropdown",
+        "name": "whenlast",
+        "default": "anon",
+        "options": [
+            { 
+                "value": "today",
+                "label": "Today"
+            }, 
+            {
+                "value": "thisweek",
+                "label": "This Week"
+            },
+            {
+                "value": "thismonth",
+                "label": "This Month"
+            },
+            {
+                "value": "lastmonth",
+                "label": "Last Month"
+            },
+            {
+                "value": "3monthsago",
+                "label": "3 Months ago"
+            },
+            {
+                "value": "6monthsago",
+                "label": "6 Months ago"
+            },
+            {
+                "value": "6monthsago",
+                "label": "6 Months ago"
+            },
+            {
+                "value": "yearago",
+                "label": "12 Months ago"
+            },
+            {
+                "value": "toolong",
+                "label": "Waaaay too long ago"
+            },
+            {
+                "value": "anon",
+                "label": "Don't wish to say"
+            }
+        ]
+    },
+    "unprotected": {
+        "label": "<strong>10</strong> - Have you ever had sex without protection?",
+        "type": "radio",
+        "default": "anon",
+        "options": [
+            {
+                "value": "yes",
+                "label": "<a href=\"#\" rel=\"popover\" data-content=\"<img src='http://articles.superhunky.com/images/articles/276/Obama-facepalm.jpg' />\" data-original-title=\"Yes\">Yes</a>",
+                "name": "unprotected"
+            },
+            {
+                "value": "no",
+                "label": "No",
+                "name": "unprotected"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say",
+            	"name": "unprotected"
+            }
+        ]
+    },
+    "whenlast": {
+        "label": "<strong>11</strong> - What type of contraception do you usually use?",
+        "type": "dropdown",
+        "name": "contraception",
+        "default": "anon",
+        "options": [
+            { 
+                "value": "condom",
+                "label": "Condom"
+            }, 
+            {
+                "value": "pill",
+                "label": "Pill"
+            },
+            {
+                "value": "coil",
+                "label": "Coil"
+            },
+            {
+                "value": "femidom",
+                "label": "Femidom"
+            },
+            {
+                "value": "implant",
+                "label": "Implant"
+            },
+            {
+                "value": "depo-provera",
+                "label": "Depo-Provera (contraceptive injection)"
+            },
+            {
+                "value": "other",
+                "label": "Other"
+            },
+            {
+                "value": "anon",
+                "label": "Don't wish to say"
+            }
+        ]
+    },
+    "sti": {
+        "label": "<strong>12</strong> - Have you ever had an STI?",
+        "type": "radio",
+        "default": "anon",
+        "options": [
+            {
+                "value": "yes",
+                "label": "Yes",
+                "name": "sti"
+            },
+            {
+                "value": "no",
+                "label": "No",
+                "name": "sti"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say",
+            	"name": "sti"
+            }
+        ]
+    },
+    "sticlinic": {
+        "label": "<strong>13</strong> - Have you ever been to an STI/GUM clinic?",
+        "type": "radio",
+        "default": "anon",
+        "options": [
+            {
+                "value": "yes",
+                "label": "Yes",
+                "name": "sticlinic"
+            },
+            {
+                "value": "no",
+                "label": "No",
+                "name": "sticlinic"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say",
+            	"name": "sticlinic"
             }
         ]
     }
