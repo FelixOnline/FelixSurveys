@@ -130,12 +130,6 @@
                                             </legend>
                                         <?php } else { 
                                             $classes = array('control-group');
-                                            /*
-                                            if(array_key_exists('dependencies', $value)) {
-                                            	if (!array_key_exists('default', $questions[$value['dependant']['id']]) || $questions[$value['dependant']['id']]['default'] != $value['dependant']['answer']) {
-                                                	$classes[] = 'hidden';
-												}
-                                             */
                                             if(array_key_exists('dependencies', $value)) {
                                                 $classes[] = 'hidden';
                                                 $classes[] = 'dependant';
