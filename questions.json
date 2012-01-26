@@ -225,7 +225,7 @@
     	"dependencies": [
             {
                 "id": "relationship",
-                "answer": "yes"
+                "value": "yes"
     	    }
         ],
         "label": "<strong>5 part 1a</strong> - Is your current relationship with an Imperial student?",
