@@ -654,5 +654,89 @@
             	"name": "sticlinic"
             }
         ]
+    },
+    "preferences": {
+        "label": "Personal Preferences?",
+        "type": "header"
+    },
+    "orientation": {
+        "label": "<strong>14</strong> - What sexual orientation are you?<br /><a href=\"#\" rel=\"popover\" data-content=\"Felix appreciates that more options are available. If you feel that you are not represented here, please choose 'Don't wish to say' and use the comments box at the end.\" data-original-title=\"What sexual orientation are you?\">More information</a>",
+        "type": "radio",
+        "default": "anon",
+        "options": [
+            {
+                "value": "heterosexual",
+                "label": "Heterosexual",
+                "name": "orientation"
+            },
+            {
+                "value": "bisexual",
+                "label": "Bisexual",
+                "name": "orientation"
+            },
+            {
+                "value": "homosexual",
+                "label": "Homosexual",
+                "name": "orientation"
+            },
+            {
+                "value": "asexual",
+                "label": "Asexual",
+                "name": "orientation"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say",
+            	"name": "everimperial"
+            }
+        ]
+    },
+    "homokiss": {
+        "label": "<strong>15 part 1</strong> - Have you ever kissed a member of the same sex?<br /><a href=\"#\" rel=\"popover\" data-content=\"Kissing here implies tongues, a friendly peck does not count.\" data-original-title=\"Have you ever kissed a member of the same sex?\">More information</a>",
+        "type": "radio",
+        "default": "anon",
+        "options": [
+            {
+                "value": "yes",
+                "label": "Yes",
+                "name": "homokiss"
+            },
+            {
+                "value": "no",
+                "label": "No",
+                "name": "homokiss"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say",
+            	"name": "homokiss"
+            }
+        ]
+    },
+    "homosex": {
+        "label": "<strong>15 part 2</strong> - Have you ever had sex with a person of the same sex",
+        "type": "radio",
+        "default": "anon",
+        "options": [
+            {
+                "value": "yes",
+                "label": "Yes",
+                "name": "homosex"
+            },
+            {
+                "value": "no",
+                "label": "No",
+                "name": "homosex"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say",
+            	"name": "homosex"
+            }
+        ]
+    },
+    "naughty": {
+        "label": "Naughty Naughty?",
+        "type": "header"
     }
 }
