@@ -86,7 +86,11 @@
                 } else {
                     if (isdone($_SESSION['felix_sex_survey']['uname']) || array_key_exists('response', $_POST)) {
                         if(array_key_exists('response', $_POST)) {
-                            addresponse(json_encode($_POST));
+                        	$troll = 1;
+                        	if ($_POST['department'] == getdept($_SESSION['felix_sex_survey']['uname']) || getdept($_SESSION['felix_sex_survey']['uname']) == 'Unknown') {
+                        		$troll = 0;
+                        	}
+                            addresponse(json_encode($_POST), $troll);
                             markasdone($_SESSION['felix_sex_survey']['uname']);
                         } ?>
                             <div class="alert alert-block alert-success">

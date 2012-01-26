@@ -63,7 +63,7 @@
 	}
 	
 	// add survey responses to database
-	function addresponse($response) {
-		$sql = "INSERT INTO `sexsurvey_responses` (id, data) VALUES (NULL, '".mysql_real_escape_string($response)."')";
+	function addresponse($response, $troll) {
+		$sql = "INSERT INTO `sexsurvey_responses` (id, data, deptcheck) VALUES (NULL, '".mysql_real_escape_string($response)."', ".mysql_real_escape_string($troll).")";
 		return mysql_query($sql);
 	}
