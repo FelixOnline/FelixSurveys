@@ -97,6 +97,7 @@
                         	}
                             addresponse(json_encode($_POST), $troll);
                             markasdone($_SESSION['felix_sex_survey']['uname']);
+                            var_dump($_POST['campuswhere']);
                         } ?>
                         <div class="alert alert-block alert-success">
                             <h4 class="alert-heading">Thank you!</h4>
@@ -174,7 +175,7 @@
                                                             foreach($value['options'] as $option) {
                                                         ?>
                                                             <label class="checkbox <?php if(array_key_exists('inline', $value) && $value['inline'] == true) echo 'inline'; ?>">
-                                                            <input type="checkbox" value="<?php echo $option['value']; ?>" name="<?php echo $value['name']; ?>"<?php if(array_key_exists('default', $value) && $value['default'] == $option['value']): ?> checked="checked"<?php endif; ?>>
+                                                            <input type="checkbox" value="<?php echo $option['value']; ?>" name="<?php echo $value['name']; ?>[]"<?php if(array_key_exists('default', $value) && $value['default'] == $option['value']): ?> checked="checked"<?php endif; ?>>
                                                                 <?php echo $option['label']; ?>
                                                             </label>
                                                         <?php 
