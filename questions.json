@@ -228,7 +228,7 @@
             {
                 "id": "relationship",
                 "answer": "yes"
-    	    },
+    	    }
         ],
         "label": "<strong>5 part 1a</strong> - Is it with a fellow Imperial student?",
         "type": "radio",
