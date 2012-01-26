@@ -72,8 +72,8 @@
                 "label": "27"
             },
             {
-                "value": "28",
-                "label": "28"
+                "value": "28+",
+                "label": "28 or older"
             },
             {
                 "value": "anon",
@@ -191,6 +191,156 @@
                 "value": "2011",
                 "label": "2011"
             },
+            {
+                "value": "anon",
+                "label": "Don't wish to say"
+            }
+        ]
+    },
+    "basicinfo": {
+        "label": "Love Life",
+        "type": "header"
+    },
+    "relationship": {
+        "label": "<strong>5 part 1</strong> - Are you in a relationship? More information",
+        "type": "radio",
+        "default": "anon",
+        "options": [
+            {
+                "value": "yes",
+                "label": "Yes",
+                "name": "relationship"
+            },
+            {
+                "value": "no",
+                "label": "No",
+                "name": "relationship"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say",
+            	"name": "relationship"
+            }
+        ]
+    },
+    "relationshipimperial": {
+    	"dependant": {
+    		"id": "relationship",
+    		"answer": "yes"
+    	},
+        "label": "<strong>5 part 1a</strong> - Is it with a fellow Imperial student?",
+        "type": "radio",
+        "default": "anon",
+        "options": [
+            {
+                "value": "yes",
+                "label": "Yes",
+                "name": "relationshipimperial"
+            },
+            {
+                "value": "no",
+                "label": "No",
+                "name": "relationshipimperial"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say",
+            	"name": "relationshipimperial"
+            }
+        ]
+    },
+    "everimperial": {
+        "label": "<strong>5 part 2</strong> - Have you been in a relationship with a fellow Imperial student?",
+        "type": "radio",
+        "default": "anon",
+        "options": [
+            {
+                "value": "yes",
+                "label": "Yes",
+                "name": "everimperial"
+            },
+            {
+                "value": "no",
+                "label": "No",
+                "name": "everimperial"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say",
+            	"name": "everimperial"
+            }
+        ]
+    },
+    "virginity": {
+        "label": "<strong>6</strong> - At what age did you lose your virginity?",
+        "type": "dropdown",
+        "name": "virginity",
+        "default": "anon",
+        "options": [
+            { 
+                "value": "virgin",
+                "label": "I am a virgin"
+            }, 
+            {
+                "value": "<13",
+                "label": "<13"
+            },
+            {
+                "value": "14",
+                "label": "14"
+            },
+            {
+                "value": "15",
+                "label": "15"
+            },
+            {
+                "value": "16",
+                "label": "16"
+            },
+            {
+                "value": "17",
+                "label": "17"
+            },
+            {
+                "value": "18",
+                "label": "18"
+            },
+            {
+                "value": "19",
+                "label": "19"
+            },
+            {
+                "value": "20",
+                "label": "20"
+            },
+            {
+                "value": "21",
+                "label": "21"
+            },
+            {
+                "value": "22",
+                "label": "22"
+            },
+            {
+                "value": "23",
+                "label": "23"
+            },
+            {
+                "value": "24",
+                "label": "24"
+            },
+            {
+                "value": "25",
+                "label": "25"
+            },
+            {
+                "value": "26",
+                "label": "26"
+            },
+            {
+                "value": "27+",
+                "label": "27 or older"
+            },                                                                                    
             {
                 "value": "anon",
                 "label": "Don't wish to say"
