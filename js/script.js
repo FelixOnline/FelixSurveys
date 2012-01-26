@@ -56,6 +56,7 @@ $(document).ready(function() {
     });
 
     $('input, select').change(function(event) {
+        log('trigger');
         var answer;
         switch(this.tagName) {
             case 'SELECT':
@@ -81,6 +82,13 @@ $(document).ready(function() {
         $.each(questions, function(key, value) {
             $(value).css('visibility', 'visible').fadeIn(200);
         });
+    });
+
+    /*
+     * On load trigger change event on all inputs
+     */
+    $.each($('input, select'), function(key, value) {
+        $(value).trigger('change');
     });
 
     $("a[rel=popover]")
