@@ -48,12 +48,12 @@
 	    if(!$local) { // if on union server
 	        $ds=ldap_connect("addressbook.ic.ac.uk");
 	        $r=ldap_bind($ds);
-	        $justthese = array("gecos");
+	        $justthese = array("o");
 	        $sr=ldap_search($ds, "ou=People, ou=shibboleth, dc=ic, dc=ac, dc=uk", "uid=$uname", $justthese);
 	        $info = ldap_get_entries($ds, $sr);
 	        if ($info["count"] > 0) {
 	            $data = explode('|', $info[0]['o'][0]);
-				explode($data[3]);
+			return $data[2];
 	        } else {
 	            return 'Unknown';
 			}
