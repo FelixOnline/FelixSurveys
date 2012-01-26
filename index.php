@@ -11,7 +11,6 @@
 	    } else {
 		$_SESSION['felix_sex_survey']['uname'] = $_POST['uname'];
 		// Add redirect here if we need to
-		header('Location: index.php');
 	    }
 	}
 ?>
