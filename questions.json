@@ -7,21 +7,19 @@
         "label": "<strong>1</strong> - Are you male or female?",
         "type": "radio",
         "default": "anon",
+        "name": "sex",
         "options": [
             {
                 "value": "male",
-                "label": "Male",
-                "name": "sex"
+                "label": "Male"
             },
             {
                 "value": "female",
-                "label": "Female",
-                "name": "sex"
+                "label": "Female"
             },
             {
             	"value": "anon",
-            	"label": "Don't wish to say",
-            	"name": "sex"
+            	"label": "Don't wish to say"
             }
         ]
     },
@@ -205,21 +203,19 @@
         "label": "<strong>5 part 1</strong> - Are you in a relationship?<br /><a href=\"#\" rel=\"popover\" data-content=\"If you are not sure, choose 'no'.\" data-original-title=\"Are you in a relationship?\">More information</a>",
         "type": "radio",
         "default": "anon",
+        "name": "relationship",
         "options": [
             {
                 "value": "yes",
-                "label": "Yes",
-                "name": "relationship"
+                "label": "Yes"
             },
             {
                 "value": "no",
-                "label": "No",
-                "name": "relationship"
+                "label": "No"
             },
             {
             	"value": "anon",
-            	"label": "Don't wish to say",
-            	"name": "relationship"
+            	"label": "Don't wish to say"
             }
         ]
     },
@@ -233,21 +229,19 @@
         "label": "<strong>5 part 1a</strong> - Is it with a fellow Imperial student?",
         "type": "radio",
         "default": "anon",
+        "name": "relationshipimperial",
         "options": [
             {
                 "value": "yes",
-                "label": "Yes",
-                "name": "relationshipimperial"
+                "label": "Yes"
             },
             {
                 "value": "no",
-                "label": "No",
-                "name": "relationshipimperial"
+                "label": "No"
             },
             {
             	"value": "anon",
-            	"label": "Don't wish to say",
-            	"name": "relationshipimperial"
+            	"label": "Don't wish to say"
             }
         ]
     },
@@ -255,21 +249,19 @@
         "label": "<strong>5 part 2</strong> - Have you been in a relationship with a fellow Imperial student?",
         "type": "radio",
         "default": "anon",
+        "name": "everimperial",
         "options": [
             {
                 "value": "yes",
-                "label": "Yes",
-                "name": "everimperial"
+                "label": "Yes"
             },
             {
                 "value": "no",
-                "label": "No",
-                "name": "everimperial"
+                "label": "No"
             },
             {
             	"value": "anon",
-            	"label": "Don't wish to say",
-            	"name": "everimperial"
+            	"label": "Don't wish to say"
             }
         ]
     },
@@ -553,25 +545,22 @@
         "label": "<strong>10</strong> - Have you ever had sex without protection?",
         "type": "radio",
         "default": "anon",
+        "name": "unprotected",
         "options": [
             {
                 "value": "yes",
-                "label": "<a href=\"#\" rel=\"popover\" data-content=\"<img src='http://articles.superhunky.com/images/articles/276/Obama-facepalm.jpg' />\" data-original-title=\"Yes\">Yes</a>",
-                "name": "unprotected"
-            },
+                "label": "<a href=\"#\" rel=\"popover\" data-content=\"<img src='http://articles.superhunky.com/images/articles/276/Obama-facepalm.jpg' />\" data-original-title=\"Yes\">Yes</a>"            },
             {
                 "value": "no",
-                "label": "No",
-                "name": "unprotected"
+                "label": "No"
             },
             {
             	"value": "anon",
-            	"label": "Don't wish to say",
-            	"name": "unprotected"
+            	"label": "Don't wish to say"
             }
         ]
     },
-    "whenlast": {
+    "contraception": {
         "label": "<strong>11</strong> - What type of contraception do you usually use?",
         "type": "dropdown",
         "name": "contraception",
@@ -615,21 +604,19 @@
         "label": "<strong>12</strong> - Have you ever had an STI?",
         "type": "radio",
         "default": "anon",
+        "name": "sti",
         "options": [
             {
                 "value": "yes",
-                "label": "Yes",
-                "name": "sti"
+                "label": "Yes"
             },
             {
                 "value": "no",
-                "label": "No",
-                "name": "sti"
+                "label": "No"
             },
             {
             	"value": "anon",
-            	"label": "Don't wish to say",
-            	"name": "sti"
+            	"label": "Don't wish to say"
             }
         ]
     },
@@ -637,21 +624,19 @@
         "label": "<strong>13</strong> - Have you ever been to an STI/GUM clinic?",
         "type": "radio",
         "default": "anon",
+        "name": "sticlinic",
         "options": [
             {
                 "value": "yes",
-                "label": "Yes",
-                "name": "sticlinic"
+                "label": "Yes"
             },
             {
                 "value": "no",
-                "label": "No",
-                "name": "sticlinic"
+                "label": "No"
             },
             {
             	"value": "anon",
-            	"label": "Don't wish to say",
-            	"name": "sticlinic"
+            	"label": "Don't wish to say"
             }
         ]
     },
@@ -663,31 +648,27 @@
         "label": "<strong>14</strong> - What sexual orientation are you?<br /><a href=\"#\" rel=\"popover\" data-content=\"Felix appreciates that more options are available. If you feel that you are not represented here, please choose 'Don't wish to say' and use the comments box at the end.\" data-original-title=\"What sexual orientation are you?\">More information</a>",
         "type": "radio",
         "default": "anon",
+        "name": "orientation",
         "options": [
             {
                 "value": "heterosexual",
-                "label": "Heterosexual",
-                "name": "orientation"
+                "label": "Heterosexual"
             },
             {
                 "value": "bisexual",
-                "label": "Bisexual",
-                "name": "orientation"
+                "label": "Bisexual"
             },
             {
                 "value": "homosexual",
-                "label": "Homosexual",
-                "name": "orientation"
+                "label": "Homosexual"
             },
             {
                 "value": "asexual",
-                "label": "Asexual",
-                "name": "orientation"
+                "label": "Asexual"
             },
             {
             	"value": "anon",
-            	"label": "Don't wish to say",
-            	"name": "everimperial"
+            	"label": "Don't wish to say"
             }
         ]
     },
@@ -695,21 +676,19 @@
         "label": "<strong>15 part 1</strong> - Have you ever kissed a member of the same sex?<br /><a href=\"#\" rel=\"popover\" data-content=\"Kissing here implies tongues, a friendly peck does not count.\" data-original-title=\"Have you ever kissed a member of the same sex?\">More information</a>",
         "type": "radio",
         "default": "anon",
+        "name": "homokiss",
         "options": [
             {
                 "value": "yes",
-                "label": "Yes",
-                "name": "homokiss"
+                "label": "Yes"
             },
             {
                 "value": "no",
-                "label": "No",
-                "name": "homokiss"
+                "label": "No"
             },
             {
             	"value": "anon",
-            	"label": "Don't wish to say",
-            	"name": "homokiss"
+            	"label": "Don't wish to say"
             }
         ]
     },
@@ -717,26 +696,294 @@
         "label": "<strong>15 part 2</strong> - Have you ever had sex with a person of the same sex",
         "type": "radio",
         "default": "anon",
+        "name": "homosex",
         "options": [
             {
                 "value": "yes",
-                "label": "Yes",
-                "name": "homosex"
+                "label": "Yes"
             },
             {
                 "value": "no",
-                "label": "No",
-                "name": "homosex"
+                "label": "No"
             },
             {
             	"value": "anon",
-            	"label": "Don't wish to say",
-            	"name": "homosex"
+            	"label": "Don't wish to say"
             }
         ]
     },
     "naughty": {
         "label": "Naughty Naughty?",
         "type": "header"
+    },
+    "howoftenmasturbate": {
+        "label": "<strong>16</strong> - How often do you masturbate",
+        "type": "dropdown",
+        "name": "howoftenmasturbate",
+        "default": "anon",
+        "options": [
+            { 
+                "value": "daily",
+                "label": "Daily"
+            }, 
+            {
+                "value": "manyaweek",
+                "label": "A few times a week"
+            },
+            {
+                "value": "weekly",
+                "label": "Weekly"
+            },
+            {
+                "value": "monthly",
+                "label": "Monthly"
+            },
+            {
+                "value": "yearly",
+                "label": "A few times a year"
+            },
+            {
+                "value": "lessornever",
+                "label": "Less or never"
+            },
+            {
+                "value": "anon",
+                "label": "Don't wish to say"
+            }
+        ]
+    },
+    "howoftenporn": {
+        "label": "<strong>17</strong> - How often do you watch porn",
+        "type": "dropdown",
+        "name": "howoftenporn",
+        "default": "anon",
+        "options": [
+            { 
+                "value": "daily",
+                "label": "Daily"
+            }, 
+            {
+                "value": "manyaweek",
+                "label": "A few times a week"
+            },
+            {
+                "value": "weekly",
+                "label": "Weekly"
+            },
+            {
+                "value": "monthly",
+                "label": "Monthly"
+            },
+            {
+                "value": "yearly",
+                "label": "A few times a year"
+            },
+            {
+                "value": "lessornever",
+                "label": "Less or never"
+            },
+            {
+                "value": "anon",
+                "label": "Don't wish to say"
+            }
+        ]
+    },
+    "campussex": {
+        "label": "<strong>18 part 1</strong> - Have you have sex on campus?<br />Bedrooms in halls do not count",
+        "type": "radio",
+        "default": "anon",
+        "name": "campussex",
+        "options": [
+            {
+                "value": "yes",
+                "label": "Yes"
+            },
+            {
+                "value": "no",
+                "label": "No"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say"
+            }
+        ]
+    },
+    "campuswhere": {
+        "label": "<strong>18 part 2</strong> - Where?",
+        "type": "radio",
+        "default": "anon",
+        "name": "campuswhere",
+        "options": [
+            {
+                "value": "yes",
+                "label": "Yes"
+            },
+            {
+                "value": "no",
+                "label": "No"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say"
+            }
+        ]
+    },
+    "threesome": {
+        "label": "<strong>19</strong> - Have you ever had a <a href=\"#\" rel=\"popover\" data-content=\"<img src='http://www.swamppolitics.com/news/politics/blog/2009/04/02/thumbs%20up%20three-thumb-350x233.jpg' />\" data-original-title=\"Threesome\">threesome</a>?",
+        "type": "radio",
+        "default": "anon",
+        "name": "threesome",
+        "options": [
+            {
+                "value": "yes",
+                "label": "Yes"
+            },
+            {
+                "value": "no",
+                "label": "No"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say"
+            }
+        ]
+    },
+    "3-youask": {
+        "label": "<strong>20</strong> - Have you ever asked a partner for a threesome?",
+        "type": "radio",
+        "default": "anon",
+        "name": "3-youask",
+        "options": [
+            {
+                "value": "yes",
+                "label": "Yes"
+            },
+            {
+                "value": "no",
+                "label": "No"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say"
+            }
+        ]
+    },
+    "3-asked": {
+        "label": "<strong>21</strong> - Have you ever been asked for a threesome?",
+        "type": "radio",
+        "default": "anon",
+        "name": "3-asked",
+        "options": [
+            {
+                "value": "yes",
+                "label": "Yes"
+            },
+            {
+                "value": "no",
+                "label": "No"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say"
+            }
+        ]
+    },
+    "anal": {
+        "label": "<strong>22</strong> - Have you ever had anal sex?",
+        "type": "radio",
+        "default": "anon",
+        "name": "anal",
+        "options": [
+            {
+                "value": "yes",
+                "label": "Yes"
+            },
+            {
+                "value": "no",
+                "label": "No"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say"
+            }
+        ]
+    },
+    "anal-youask": {
+        "label": "<strong>23</strong> - Have you ever asked a partner for anal sex?",
+        "type": "radio",
+        "default": "anon",
+        "name": "anal-youask",
+        "options": [
+            {
+                "value": "yes",
+                "label": "Yes"
+            },
+            {
+                "value": "no",
+                "label": "No"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say"
+            }
+        ]
+    },
+    "anal-asked": {
+        "label": "<strong>24</strong> - Have you ever been asked for anal sex?",
+        "type": "radio",
+        "default": "anon",
+        "options": [
+            {
+                "value": "yes",
+                "label": "Yes",
+                "name": "anal-asked"
+            },
+            {
+                "value": "no",
+                "label": "No",
+                "name": "anal-asked"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say",
+            	"name": "anal-asked"
+            }
+        ]
+    },
+    "nssss": {
+        "label": "NSSSS (National Student Sexual Satisfaction Survey)",
+        "type": "header"
+    },
+    "sexhappy": {
+        "label": "<strong>25</strong> - How happy are you with your sex life in general?",
+        "type": "radio",
+        "default": "anon",
+        "name": "sexhappy",
+        "options": [
+            {
+                "value": "veryhappy",
+                "label": "Very Happy"
+            },
+            {
+                "value": "happy",
+                "label": "Happy"
+            },
+            {
+                "value": "meh",
+                "label": "Meh"
+            },
+            {
+                "value": "unhappy",
+                "label": "Unhappy"
+            },
+            {
+                "value": "vunhappy",
+                "label": "Very Unhappy"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say"
+            }
+        ]
     }
 }
