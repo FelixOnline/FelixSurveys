@@ -207,8 +207,8 @@
 								        <p>As this survey is anonymous, you will not be able to get back or edit your responses after they have been submitted.</p>
 								    </div>
 								    <div class="modal-footer">
-								        <input type="submit" class="btn primary xlarge" value="Yes" name="response"/>
 								        <a href="#" data-dismiss="modal" class="btn xlarge">No</a>
+								        <input type="submit" class="btn primary xlarge" value="Yes" name="response"/>
 								    </div>
 								</div>
 
