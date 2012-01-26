@@ -821,22 +821,100 @@
     },
     "campuswhere": {
         "label": "<strong>18 part 2</strong> - Where?",
-        "type": "radio",
-        "default": "anon",
+        "type": "checkbox",
         "name": "campuswhere",
-        "inline": true,
         "options": [
             {
-                "value": "yes",
-                "label": "Yes"
+                "value": "aero",
+                "label": "Aero"
             },
             {
-                "value": "no",
-                "label": "No"
+                "value": "bessemer",
+                "label": "Bessemer"
             },
             {
-            	"value": "anon",
-            	"label": "Don't wish to say"
+                "value": "blackett",
+                "label": "Blackett"
+            },
+            {
+                "value": "business",
+                "label": "Business School"
+            },
+            {
+                "value": "chemistry",
+                "label": "Chemistry"
+            },
+            {
+                "value": "eastside",
+                "label": "Eastside Bar"
+            },
+            {
+                "value": "eee",
+                "label": "EEE"
+            },
+            {
+                "value": "huxley",
+                "label": "Huxley"
+            },
+            {
+                "value": "library",
+                "label": "Library"
+            },
+            {
+                "value": "mecheng",
+                "label": "MechEng"
+            },
+            {
+                "value": "rsm",
+                "label": "RSM"
+            },
+            {
+                "value": "saf",
+                "label": "SAF"
+            },
+            {
+                "value": "sherfield",
+                "label": "Sherfield"
+            },
+            {
+                "value": "skempton",
+                "label": "Skempton"
+            },
+            {
+                "value": "unionbars",
+                "label": "Union Bars"
+            },
+            {
+                "value": "unionoffices",
+                "label": "Union Offices"
+            },
+            {
+                "value": "wolfson",
+                "label": "Wolfson/Flowers"
+            },
+            {
+                "value": "halls",
+                "label": "Halls of Residence Communal Spaces"
+            },
+            {
+                "value": "reynolds",
+                "label": "Reynold's Bar"
+            },
+            {
+                "value": "ethospool",
+                "label": "Ethos Pool"
+            },
+            {
+                "value": "ethosgym",
+                "label": "Ethos Gym"
+            },
+            {
+                "value": "lawn",
+                "label": "Queen's Lawn"
+            },
+            {
+                "value": "gardens",
+                "label": "Princes' Gardens/Secret Garden"
             }
         ]
     },
