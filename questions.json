@@ -985,5 +985,37 @@
             	"label": "Don't wish to say"
             }
         ]
+    },
+    "sexnegativity": {
+        "label": "<strong>26</strong> - Do you feel that being at Imperial negatively affects your sex life?",
+        "type": "radio",
+        "default": "anon",
+        "name": "sexnegativity",
+        "options": [
+            {
+                "value": "veryhappy",
+                "label": "Very Happy"
+            },
+            {
+                "value": "happy",
+                "label": "Happy"
+            },
+            {
+                "value": "meh",
+                "label": "Meh"
+            },
+            {
+                "value": "unhappy",
+                "label": "Unhappy"
+            },
+            {
+                "value": "vunhappy",
+                "label": "Very Unhappy"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say"
+            }
+        ]
     }
 }
