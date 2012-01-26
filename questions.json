@@ -43,26 +43,33 @@
         ]
     },
     "dependant": {
-        "dependant": {
-            "id": "age",
-            "answer": "18"
-        },
-        "label": "Test dependant",
-        "type": "dropdown",
+        "dependencies": [
+            {
+                "id": "age",
+                "answer": "18"
+            },
+            {
+                "id": "sex",
+                "answer": "male"
+            }
+        ],
+        "label": "You are an 18 year old male",
+        "type": "radio",
         "name": "dep",
         "options": [
             {
-                "value": "hello",
-                "label": "world",
-                "name": "name"
+                "value": "yes",
+                "label": "I am"
             }
         ]
     },
     "dependant2": {
-        "dependant": {
-            "id": "age",
-            "answer": "20"
-        },
+        "dependencies": [
+            {
+                "id": "age",
+                "answer": "20"
+            }
+        ],
         "label": "Are you really?",
         "type": "radio",
         "name": "dep2",

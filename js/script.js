@@ -6,22 +6,53 @@ $(document).ready(function() {
 
     dependant.find = function(needle, answer) {
         var output = [];
-        $.each(dependant, function(key, value) {
-            if(value.id == needle) {
-                if(answer) {
-                    if(value.answer == answer) {
-                        output.push(value.element);
+        $.each(dependant, function(key, value) { // loop through all dependant questions
+            if(answer) { // if an answer provided
+                var satisfied = [];
+                $.each(value.dependencies, function(i, dep) {
+                    if(needle == dep.id) {
+                        if(answer == dep.answer) {
+                            dep.satisfied = true;
+                        } else {
+                            dep.satisfied = false;
+                        }
                     }
-                } else {
+                    if(dep.satisfied == true) {
+                        satisfied.push(dep);
+                    }
+                });
+                if(compare(satisfied, value.dependencies)) {
                     output.push(value.element);
                 }
+            } else { // return all matching elements
+                $.each(value.dependencies, function(i, dep) {
+                    if(needle == dep.id) {
+                        output.push(value.element);
+                        dep.satisfied = false;
+                    }
+                });
             }
         });
         return output;
     };
 
+    function compare(x,y) {
+        if (x.length != y.length) { return false; }
+        var a = x.sort(),
+            b = y.sort();
+        for (var i = 0; y[i]; i++) {
+            if (a[i] !== b[i]) {
+                return false;
+            }
+        }
+        return true;
+    };
+
     $.each($('.dependant'), function(key, value) {
-        dependant.push({ id: $(value).data('dependant'), answer: $(value).data('answer'), element: value});
+        var dependencies = $(value).data('dependencies');
+        if(dependencies) {
+            dependant.push({dependencies: dependencies, element: value});
+        }
     });
 
     $('input, select').change(function(event) {
