@@ -228,7 +228,7 @@
                 "answer": "yes"
     	    }
         ],
-        "label": "<strong>5 part 1a</strong> - Is it with a fellow Imperial student?",
+        "label": "<strong>5 part 1a</strong> - Is your current relationship with an Imperial student?",
         "type": "radio",
         "default": "anon",
         "name": "relationshipimperial",
@@ -249,7 +249,7 @@
         ]
     },
     "everimperial": {
-        "label": "<strong>5 part 2</strong> - Have you been in a relationship with a fellow Imperial student?",
+        "label": "<strong>5 part 2</strong> - Have you had a past relationship with an Imperial student?",
         "type": "radio",
         "default": "anon",
         "name": "everimperial",
