@@ -8,6 +8,7 @@
         "type": "radio",
         "default": "anon",
         "name": "sex",
+        "inline": true,
         "options": [
             {
                 "value": "male",
@@ -204,6 +205,7 @@
         "type": "radio",
         "default": "anon",
         "name": "relationship",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -230,6 +232,7 @@
         "type": "radio",
         "default": "anon",
         "name": "relationshipimperial",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -250,6 +253,7 @@
         "type": "radio",
         "default": "anon",
         "name": "everimperial",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -546,6 +550,7 @@
         "type": "radio",
         "default": "anon",
         "name": "unprotected",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -605,6 +610,7 @@
         "type": "radio",
         "default": "anon",
         "name": "sti",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -625,6 +631,7 @@
         "type": "radio",
         "default": "anon",
         "name": "sticlinic",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -649,6 +656,7 @@
         "type": "radio",
         "default": "anon",
         "name": "orientation",
+        "inline": true,
         "options": [
             {
                 "value": "heterosexual",
@@ -677,6 +685,7 @@
         "type": "radio",
         "default": "anon",
         "name": "homokiss",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -697,6 +706,7 @@
         "type": "radio",
         "default": "anon",
         "name": "homosex",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -793,6 +803,7 @@
         "type": "radio",
         "default": "anon",
         "name": "campussex",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -813,6 +824,7 @@
         "type": "radio",
         "default": "anon",
         "name": "campuswhere",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -833,6 +845,7 @@
         "type": "radio",
         "default": "anon",
         "name": "threesome",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -853,6 +866,7 @@
         "type": "radio",
         "default": "anon",
         "name": "3-youask",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -873,6 +887,7 @@
         "type": "radio",
         "default": "anon",
         "name": "3-asked",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -893,6 +908,7 @@
         "type": "radio",
         "default": "anon",
         "name": "anal",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -913,6 +929,7 @@
         "type": "radio",
         "default": "anon",
         "name": "anal-youask",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -933,6 +950,7 @@
         "type": "radio",
         "default": "anon",
         "name": "anal-asked",
+        "inline": true,
         "options": [
             {
                 "value": "yes",
@@ -957,6 +975,7 @@
         "type": "radio",
         "default": "anon",
         "name": "sexhappy",
+        "inline": true,
         "options": [
             {
                 "value": "veryhappy",
@@ -989,6 +1008,7 @@
         "type": "radio",
         "default": "anon",
         "name": "sexculture",
+        "inline": true,
         "options": [
             {
                 "value": "strongly",
@@ -1020,7 +1040,8 @@
         "label": "<strong>27</strong> - Do you agree or disagree that being at Imperial negatively affects your sex life?<br /><a href=\"#\" rel=\"popover\" data-content=\"Strongly agree means that being at Imperial negatively affects your sex life\" data-original-title=\"Imperial and your sex life\">More information</a>",
         "type": "radio",
         "default": "anon",
-        "name": "sexculture",
+        "name": "seximperial",
+        "inline": true,
         "options": [
             {
                 "value": "strongly",
@@ -1053,6 +1074,7 @@
         "type": "radio",
         "default": "anon",
         "name": "sexsatisfaction",
+        "inline": true,
         "options": [
             {
                 "value": "strongly",
