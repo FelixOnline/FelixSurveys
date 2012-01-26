@@ -202,7 +202,7 @@
         "type": "header"
     },
     "relationship": {
-        "label": "<strong>5 part 1</strong> - Are you in a relationship? More information",
+        "label": "<strong>5 part 1</strong> - Are you in a relationship?<br /><a href=\"#\" rel=\"popover\" data-content=\"If you are not sure, choose 'no'.\" data-original-title=\"Are you in a relationship?\">More information</a>",
         "type": "radio",
         "default": "anon",
         "options": [
