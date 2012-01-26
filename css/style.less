@@ -58,12 +58,18 @@ legend {
     margin-top: 20px;
 }
 
+textarea {
+    width: 250px;
+    height: 100px;
+}
+
 .form-horizontal legend + .control-group {
     padding-top: 10px;
 }
 
-.controls > .radio.inline:first-child {
+.controls > .radio.inline:first-child, .controls > .radio.inline:first-child {
     padding-top: 0px; 
+    margin-left: 2px !important;
 }
 
 .radio.inline, .checkbox.inline { 
@@ -78,12 +84,15 @@ legend {
 
 .checkbox.inline, .radio.inline {
     padding-left: 18px;
+    margin-left: 15px !important;
 }
 
 .form-horizontal .control-group > label { width: 250px; padding-right: 10px; }
 
-
-
+/* Contain floats: h5bp.com/q */
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
 
 
 
