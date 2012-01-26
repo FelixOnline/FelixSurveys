@@ -350,7 +350,7 @@
         "type": "header",
         "dependencies": [
         	{
-        		"key": "virginity",
+        		"id": "virginity",
         		"value": "virgin"
         	}
         ],
@@ -363,7 +363,7 @@
         "default": "anon",
         "dependencies": [
         	{
-        		"key": "virginity",
+        		"id": "virginity",
         		"value": "virgin"
         	}
         ],
@@ -482,7 +482,7 @@
         "default": "anon",
         "dependencies": [
         	{
-        		"key": "virginity",
+        		"id": "virginity",
         		"value": "virgin"
         	}
         ],
@@ -525,7 +525,7 @@
         "default": "anon",
         "dependencies": [
         	{
-        		"key": "virginity",
+        		"id": "virginity",
         		"value": "virgin"
         	}
         ],
@@ -580,7 +580,7 @@
         "name": "unprotected",
         "dependencies": [
         	{
-        		"key": "virginity",
+        		"id": "virginity",
         		"value": "virgin"
         	}
         ],
@@ -607,7 +607,7 @@
         "default": "anon",
         "dependencies": [
         	{
-        		"key": "virginity",
+        		"id": "virginity",
         		"value": "virgin"
         	}
         ],
@@ -655,7 +655,7 @@
         "inline": true,
         "dependencies": [
         	{
-        		"key": "virginity",
+        		"id": "virginity",
         		"value": "virgin"
         	}
         ],
@@ -683,7 +683,7 @@
         "inline": true,
         "dependencies": [
         	{
-        		"key": "virginity",
+        		"id": "virginity",
         		"value": "virgin"
         	}
         ],
@@ -764,7 +764,7 @@
         "name": "homosex",
         "dependencies": [
         	{
-        		"key": "virginity",
+        		"id": "virginity",
         		"value": "virgin"
         	}
         ],
@@ -867,7 +867,7 @@
         "name": "campuswhere",
         "dependencies": [
         	{
-        		"key": "virginity",
+        		"id": "virginity",
         		"value": "virgin"
         	}
         ],
@@ -975,7 +975,7 @@
         "inline": true,
         "dependencies": [
         	{
-        		"key": "virginity",
+        		"id": "virginity",
         		"value": "virgin"
         	}
         ],
@@ -1045,7 +1045,7 @@
         "inline": true,
         "dependencies": [
         	{
-        		"key": "virginity",
+        		"id": "virginity",
         		"value": "virgin"
         	}
         ],
