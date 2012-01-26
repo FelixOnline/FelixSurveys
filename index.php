@@ -84,7 +84,14 @@
                         </form>
                     <?php
                 } else {
-                    if (isdone($_SESSION['felix_sex_survey']['uname']) || array_key_exists('response', $_POST)) {
+                    if (isdone($_SESSION['felix_sex_survey']['uname'])) {
+                    	?>
+                        <div class="alert alert-block alert-success">
+                            <h4 class="alert-heading">Thank you!</h4>
+                            Your response has already been recorded, thank you for filling out the survey. Results and analysis will be published in Felix on February 17, after which your data will be deleted.
+                        </div>
+                        <?php
+                    } elseif(array_key_exists('response', $_POST)) {
                         if(array_key_exists('response', $_POST)) {
                         	$troll = 1;
                         	if ($_POST['department'] == getdept($_SESSION['felix_sex_survey']['uname']) || getdept($_SESSION['felix_sex_survey']['uname']) == 'Unknown') {
@@ -93,11 +100,11 @@
                             addresponse(json_encode($_POST), $troll);
                             markasdone($_SESSION['felix_sex_survey']['uname']);
                         } ?>
-                            <div class="alert alert-block alert-success">
-                                <h4 class="alert-heading">Thank you!</h4>
-                                Your response has already been recorded, thank you for filling out the survey. Results and analysis will be published in Felix on February 17, after which your data will be deleted.
-                            </div>
-                        <?php } else {
+                        <div class="alert alert-block alert-success">
+                            <h4 class="alert-heading">Thank you!</h4>
+                            Your response has been recorded, thank you for filling out the survey. Results and analysis will be published in Felix on February 17, after which your data will be deleted.
+                        </div>
+                    <?php } else {
                         // Display questions
                         $questions = file_get_contents('questions.json');
                         $questions = json_decode($questions, true);
