@@ -1,3 +1,20 @@
+<?php
+	require('functions.php');
+        session_name("felix_sex_survey");
+        session_start();
+
+        require('db.php');
+	if (array_key_exists('login', $_POST)) {
+	    // attempting to login
+	    if (!login($_POST['uname'], $_POST['pass'])) {
+		?><div class="alert alert-error">Sorry, your account details were not accepted. Please try again.</div><?php
+	    } else {
+		$_SESSION['felix_sex_survey']['uname'] = $_POST['uname'];
+		// Add redirect here if we need to
+		header('Location: index.php');
+	    }
+	}
+?>
 <!doctype html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
@@ -32,13 +49,6 @@
     <script src="js/libs/modernizr-2.0.6.min.js"></script>
 
 </head>
-<?php
-		require('functions.php');
-        session_name("felix_sex_survey");
-        session_start();
-
-        require('db.php');
-?>
 <body>
     <div class="container">
         <header id="head">
@@ -47,15 +57,6 @@
         <div role="main" id="main">
             <?php include('introduction.php'); ?>
             <?php
-                if (array_key_exists('login', $_POST)) {
-                    // attempting to login
-                    if (!login($_POST['uname'], $_POST['pass'])) {
-                        ?><div class="alert alert-error">Sorry, your account details were not accepted. Please try again.</div><?php
-                    } else {
-                        strtolower($_SESSION['felix_sex_survey']['uname'] = $_POST['uname']);
-                        // Add redirect here if we need to
-                    }
-                }
                 
                 if (!isloggedin()) {
                     // not logged in? display login form
