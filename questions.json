@@ -480,6 +480,13 @@
         "type": "dropdown",
         "name": "howoften",
         "default": "anon",
+        "dependencies": [
+        	{
+        		"key": "virginity",
+        		"value": "virgin"
+        	}
+        ],
+        "reverse": true,
         "options": [
             { 
                 "value": "daily",
@@ -516,6 +523,13 @@
         "type": "dropdown",
         "name": "whenlast",
         "default": "anon",
+        "dependencies": [
+        	{
+        		"key": "virginity",
+        		"value": "virgin"
+        	}
+        ],
+        "reverse": true,
         "options": [
             { 
                 "value": "today",
@@ -564,6 +578,13 @@
         "type": "radio",
         "default": "anon",
         "name": "unprotected",
+        "dependencies": [
+        	{
+        		"key": "virginity",
+        		"value": "virgin"
+        	}
+        ],
+        "reverse": true,
         "inline": true,
         "options": [
             {
@@ -584,6 +605,13 @@
         "type": "dropdown",
         "name": "contraception",
         "default": "anon",
+        "dependencies": [
+        	{
+        		"key": "virginity",
+        		"value": "virgin"
+        	}
+        ],
+        "reverse": true,
         "options": [
             { 
                 "value": "condom",
@@ -625,6 +653,13 @@
         "default": "anon",
         "name": "sti",
         "inline": true,
+        "dependencies": [
+        	{
+        		"key": "virginity",
+        		"value": "virgin"
+        	}
+        ],
+        "reverse": true,
         "options": [
             {
                 "value": "yes",
@@ -646,6 +681,13 @@
         "default": "anon",
         "name": "sticlinic",
         "inline": true,
+        "dependencies": [
+        	{
+        		"key": "virginity",
+        		"value": "virgin"
+        	}
+        ],
+        "reverse": true,
         "options": [
             {
                 "value": "yes",
@@ -720,6 +762,13 @@
         "type": "radio",
         "default": "anon",
         "name": "homosex",
+        "dependencies": [
+        	{
+        		"key": "virginity",
+        		"value": "virgin"
+        	}
+        ],
+        "reverse": true,
         "inline": true,
         "options": [
             {
@@ -812,31 +861,17 @@
             }
         ]
     },
-    "campussex": {
-        "label": "<strong>18 part 1</strong> - Have you have sex on campus?<br />Bedrooms in halls do not count",
-        "type": "radio",
-        "default": "anon",
-        "name": "campussex",
-        "inline": true,
-        "options": [
-            {
-                "value": "yes",
-                "label": "Yes"
-            },
-            {
-                "value": "no",
-                "label": "No"
-            },
-            {
-            	"value": "anon",
-            	"label": "Don't wish to say"
-            }
-        ]
-    },
     "campuswhere": {
-        "label": "<strong>18 part 2</strong> - Where?",
+        "label": "<strong>18</strong> - Where on campus have you had sex? Tick all that apply.",
         "type": "checkbox",
         "name": "campuswhere",
+        "dependencies": [
+        	{
+        		"key": "virginity",
+        		"value": "virgin"
+        	}
+        ],
+        "reverse": true,
         "options": [
             {
                 "value": "aero",
@@ -938,6 +973,13 @@
         "default": "anon",
         "name": "threesome",
         "inline": true,
+        "dependencies": [
+        	{
+        		"key": "virginity",
+        		"value": "virgin"
+        	}
+        ],
+        "reverse": true,
         "options": [
             {
                 "value": "yes",
@@ -1001,6 +1043,13 @@
         "default": "anon",
         "name": "anal",
         "inline": true,
+        "dependencies": [
+        	{
+        		"key": "virginity",
+        		"value": "virgin"
+        	}
+        ],
+        "reverse": true,
         "options": [
             {
                 "value": "yes",
