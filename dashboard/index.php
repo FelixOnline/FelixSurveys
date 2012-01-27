@@ -41,12 +41,12 @@
             <div id="counter">
                 <?php
                     require('../db.php');
-                    $sql = "SELECT COUNT(*) FROM sexsurvey_completers";
+                    $sql = "SELECT COUNT(*) FROM `sexsurvey_responses`";
                     $rsc = mysql_query($sql);
-                    $count = mysql_result($rsc, 0, 0);
+                    list($count) = mysql_fetch_array($rsc);
                 ?>
                     <h2><?php echo $count; ?></h2>
-                <p id="info">people have completed the survey</p>
+                <p id="info">responses so far</p>
             </div>
         </div>
         <footer>
