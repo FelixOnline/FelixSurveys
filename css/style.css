@@ -1,0 +1,19 @@
+::-moz-selection{background:#fe57a1;color:#fff;text-shadow:none;}
+::selection{background:#fe57a1;color:#fff;text-shadow:none;}
+header h1{font-size:80px;line-height:1;margin-top:50px;text-align:center;text-shadow:0 1px 0 white;letter-spacing:-1px;font-weight:normal;margin-bottom:20px;}
+#main form{margin-top:20px;}
+footer p{text-align:right;margin-top:40px;margin-bottom:10px;float:right;}
+footer img{float:left;}
+hr{margin-top:0;}
+legend{margin-bottom:10px;margin-top:20px;}
+textarea{width:250px;height:100px;}
+.form-horizontal legend+.control-group{padding-top:10px;}
+.controls>.radio.inline:first-child,.controls>.radio.inline:first-child{padding-top:0px;margin-left:2px !important;}
+.radio.inline,.checkbox.inline{display:block;float:left;padding-top:4px !important;}
+.checkbox,.radio{padding-left:120px;}
+.checkbox.inline,.radio.inline{padding-left:18px;margin-left:15px !important;}
+.form-horizontal .control-group>label{width:250px;padding-right:10px;}
+.clearfix:before,.clearfix:after{content:"";display:table;}
+.clearfix:after{clear:both;}
+.clearfix{*zoom:1;}
+@media only screen and (min-width:480px){}@media only screen and (min-width:768px){}
