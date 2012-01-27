@@ -52,11 +52,26 @@
 
 </head>
 <body>
+    <!-- Facebook like -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=169785919713408";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
     <div class="container">
         <header id="head">
             <h1>Felix Sex Survey 2012</h1>
         </header>
         <div role="main" id="main">
+            <div id="social-links" class="clearfix">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://felixonline.co.uk/sexsurvey" data-related="felixonline">Tweet</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                <div class="fb-like" data-href="http://felixonline.co.uk/sexsurvey" data-send="true" data-layout="button_count" data-width="200" data-show-faces="false" data-font="arial"></div>
+            </div>
             <?php include('introduction.php'); ?>
             <?php
                 

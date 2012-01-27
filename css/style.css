@@ -13,6 +13,8 @@ textarea{width:250px;height:100px;}
 .checkbox,.radio{padding-left:120px;}
 .checkbox.inline,.radio.inline{padding-left:18px;margin-left:15px !important;}
 .form-horizontal .control-group>label{width:250px;padding-right:10px;}
+#social-links{float:right;}
+.fb_edge_widget_with_comment{position:relative;top:-4px;}
 .clearfix:before,.clearfix:after{content:"";display:table;}
 .clearfix:after{clear:both;}
 .clearfix{*zoom:1;}
