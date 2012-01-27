@@ -32,7 +32,6 @@
     <meta name="description" content="The Felix Online Sex Survey 2012">
     <meta property="og:image" content="http://felixonline.co.uk/img/sexsurvey.jpg"/>
     <meta property="og:title" content="Felix Sex Survey 2012"/>
-    <meta property="og:url" content="http://felixonline.co.uk/sexsurvey"/>
     <meta property="og:type" content="website"/>
 
     <!-- Mobile viewport optimized: h5bp.com/viewport -->
