@@ -1,15 +1,15 @@
 <?php
 	require('functions.php');
-        session_name("felix_sex_survey");
-        session_start();
+    session_name("felix_sex_survey");
+    session_start();
 
-        require('db.php');
+    require('db.php');
 	if (array_key_exists('login', $_POST)) {
 	    // attempting to login
 	    if (!login($_POST['uname'], $_POST['pass'])) {
-		?><div class="alert alert-error">Sorry, your account details were not accepted. Please try again.</div><?php
+            ?><div class="alert alert-error">Sorry, your account details were not accepted. Please try again.</div><?php
 	    } else {
-		$_SESSION['felix_sex_survey']['uname'] = $_POST['uname'];
+            $_SESSION['felix_sex_survey']['uname'] = strtolower($_POST['uname']);
 		// Add redirect here if we need to
 	    }
 	}
