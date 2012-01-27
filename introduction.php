@@ -1,9 +1,6 @@
 <h3>Introduction</h3>
 <p>Thank you for agreeing to take part in this year’s Felix Sex Survey. After the success of last year’s, we’re looking forward to seeing if and how any characteristics have changed. As with last year, the results are completely confidential. For complete information on the privacy and data protection, click the button below. In brief, your username is only required to prevent trolling and restrict the questionnaire to Imperial students. At no point will it be possible for your answer to be matched to you.</p>
 <p><a data-toggle="modal" href="#more-details" >More information</a></p>
-<div class="alert alert-error">
-    The survey is in open beta at the moment. Feel free to run through the survey now but all responses will be deleted before the survey is officially opened at 12am on Friday. If you spot any problems email me at <a href="mailto: jk708@imperial.ac.uk">jk708@imperial.ac.uk</a>.
-</div>
 <div id="more-details" class="modal hide fade" >
     <div class="modal-header">
         <a href="#" class="close" data-dismiss="modal">×</a>

@@ -1,15 +1,15 @@
 <?php
 	require('functions.php');
-        session_name("felix_sex_survey");
-        session_start();
+    session_name("felix_sex_survey");
+    session_start();
 
-        require('db.php');
+    require('db.php');
 	if (array_key_exists('login', $_POST)) {
 	    // attempting to login
 	    if (!login($_POST['uname'], $_POST['pass'])) {
-		?><div class="alert alert-error">Sorry, your account details were not accepted. Please try again.</div><?php
+            ?><div class="alert alert-error">Sorry, your account details were not accepted. Please try again.</div><?php
 	    } else {
-		$_SESSION['felix_sex_survey']['uname'] = $_POST['uname'];
+            $_SESSION['felix_sex_survey']['uname'] = strtolower($_POST['uname']);
 		// Add redirect here if we need to
 	    }
 	}
@@ -29,7 +29,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <title>Felix Sex Survey</title>
-    <meta name="description" content="">
+    <meta name="description" content="The Felix Online Sex Survey 2012">
+    <meta property="og:image" content="http://felixonline.co.uk/img/sexsurvey.jpg"/>
+    <meta property="og:title" content="Felix Sex Survey 2012"/>
+    <meta property="og:type" content="website"/>
 
     <!-- Mobile viewport optimized: h5bp.com/viewport -->
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -37,8 +40,8 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet/less" type="text/css" href="css/style.less">
-    <script src="js/less-1.2.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
@@ -49,11 +52,26 @@
 
 </head>
 <body>
+    <!-- Facebook like -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=169785919713408";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
     <div class="container">
         <header id="head">
             <h1>Felix Sex Survey 2012</h1>
         </header>
         <div role="main" id="main">
+            <div id="social-links" class="clearfix">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://felixonline.co.uk/sexsurvey" data-related="felixonline">Tweet</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                <div class="fb-like" data-href="https://dougal.union.ic.ac.uk/media/felix/sexsurvey/" data-send="true" data-layout="button_count" data-width="200" data-show-faces="false" data-font="arial"></div>
+            </div>
             <?php include('introduction.php'); ?>
             <?php
                 
@@ -96,7 +114,6 @@
                         	}
                             addresponse(json_encode($_POST), $troll);
                             markasdone($_SESSION['felix_sex_survey']['uname']);
-                            var_dump($_POST['campuswhere']);
                         } ?>
                         <div class="alert alert-block alert-success">
                             <h4 class="alert-heading">Thank you!</h4>
