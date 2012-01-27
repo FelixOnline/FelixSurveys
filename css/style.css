@@ -18,4 +18,6 @@ textarea{width:250px;height:100px;}
 .clearfix:before,.clearfix:after{content:"";display:table;}
 .clearfix:after{clear:both;}
 .clearfix{*zoom:1;}
+#counter{margin-top:20%;}#counter h2{text-align:center;font-size:110px;line-height:1;padding-bottom:20px;}
+#counter p{text-align:center;}
 @media only screen and (min-width:480px){}@media only screen and (min-width:768px){}
