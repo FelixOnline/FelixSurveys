@@ -151,6 +151,10 @@
                 "label": "Physics"
             },
             {
+                "value": "Humanities",
+                "label": "Humanities"
+            },
+            {
                 "value": "anon",
                 "label": "Don't wish to say"
             }
