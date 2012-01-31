@@ -151,6 +151,10 @@
                 "label": "Physics"
             },
             {
+                "value": "Humanities",
+                "label": "Humanities"
+            },
+            {
                 "value": "anon",
                 "label": "Don't wish to say"
             }
@@ -1251,7 +1255,7 @@
         ]
     },
     "sexsatisfaction": {
-        "label": "<strong>28</strong> - Has your sex life at Imperial has negatively affected your “Student Satisfaction”?",
+        "label": "<strong>28</strong> - Has your sex life at Imperial negatively affected your “Student Satisfaction”?",
         "type": "radio",
         "default": "anon",
         "name": "sexsatisfaction",
