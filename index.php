@@ -74,10 +74,12 @@
             </div>
             <?php include('introduction.php'); ?>
             <?php
-                
                 if (!isloggedin()) {
                     // not logged in? display login form
                     ?>
+                        <div id="video">
+                            <iframe width="560" height="315" src="http://www.youtube.com/embed/xReH7T2jxTc?rel=0" frameborder="0" allowfullscreen></iframe>
+                        </div>
                         <form method="post" id="loginForm" class="form-horizontal">
                             <legend>Please enter your username/password to continue</legend>
                             <p>This information is only required to confirm that you have not yet completed this survey. It will <strong>not</strong> be tied to your response. See above for further details.</p>
