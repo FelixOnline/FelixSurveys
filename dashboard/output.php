@@ -102,3 +102,53 @@ while($row = mysql_fetch_array($rsc)) {
     fputcsv($fp, $answers);
 }
 
+fclose($fp);
+
+unset($headers);
+
+// RESPONSES FOR CAMPUSWHERE
+$fp = fopen('data_locations.csv', 'w+');
+
+$i = 0;
+$headers = array();
+$headers_raw = array();
+foreach($questions['campuswhere']['options'] as $location) {
+    $headers[$i] = $location['label'];
+	$headers_raw[$i] = $location['value'];
+	$i++;
+}
+
+fputcsv($fp, $headers);
+
+$sql = "SELECT * FROM `sexsurvey_responses`";
+$rsc = mysql_query($sql);
+
+while($row = mysql_fetch_array($rsc)) {
+    $answers = array();
+    $places = array();
+    $data = json_decode($row['data'], true);
+	
+	$this_row = array();
+	
+	if(array_key_exists('campuswhere', $data)) {
+		foreach($headers_raw as $id => $location) {
+			if(array_search($location, $data['campuswhere']) !== false) {
+				$this_row[$id] = 1;
+			} else {
+				$this_row[$id] = 0;
+			}
+		}
+		
+		fputcsv($fp, $this_row);
+	}
+}
+
+fclose($fp);
+
+?>
+
+<h1>Export complete</h1>
+<ul>
+	<li><b>data.csv</b> contains the data on every question, as well as the troll check bit</li>
+	<li><b>data_locations.csv</b> contains true/fale values for each location in the locations list, for every response specified. This is easier to analyse than the values for this question in data.csv</li>
+</ul>
