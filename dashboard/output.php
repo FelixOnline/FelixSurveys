@@ -81,7 +81,7 @@ while($row = mysql_fetch_array($rsc)) {
 						$realanswers = $questions[$column]['options'];
 						foreach ($realanswers as $option) {
 							if($option['value'] == $data[$column]) {
-								$answers[] = $option['label'];
+								$answers[] = strip_tags($option['label']);
 							}
 						}
 	                    break;
