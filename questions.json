@@ -84,7 +84,7 @@
             }
         ]
     },
-    "deparment": {
+    "department": {
         "label": "<strong>3</strong> - What department are you?",
         "type": "dropdown",
         "name": "department",
@@ -564,8 +564,8 @@
                 "label": "6 Months ago"
             },
             {
-                "value": "6monthsago",
-                "label": "6 Months ago"
+                "value": "9monthsago",
+                "label": "9 Months ago"
             },
             {
                 "value": "yearago",
