@@ -29,10 +29,10 @@
        More info: h5bp.com/b/378 -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title>Felix Sex Survey</title>
-    <meta name="description" content="The Felix Online Sex Survey 2012">
-    <meta property="og:image" content="http://felixonline.co.uk/img/sexsurvey.jpg"/>
-    <meta property="og:title" content="Felix Sex Survey 2012"/>
+    <title>The Felix Sexism Survey</title>
+    <meta name="description" content="The Felix Sexism Survey">
+    <meta property="og:image" content="http://felixonline.co.uk/img/felix_cat-small.jpg"/>
+    <meta property="og:title" content="The Felix Sexism Sruvey"/>
     <meta property="og:type" content="website"/>
 
     <!-- Mobile viewport optimized: h5bp.com/viewport -->
@@ -65,36 +65,23 @@
     </script>
     <div class="container">
         <header id="head">
-            <h1>Felix Sex Survey 2012</h1>
+            <h1>The Felix Sexism Survey</h1>
         </header>
         <?php if(ACTIVE == false) { ?>
             <div id="closed">
                 <div class="alert alert-error">
-                    The Sex Survey 2012 has now closed, the results will be printed in a special feature in Felix on the 17th of Feburary 2012 and will also be featured online.
+                    This survey has now closed.<br />
                     Thank you for your interest.
                 </div>
                 <p>For more information on the privacy and confidentiality of the results, <a data-toggle="modal" href="#more-details" >click here</a></p>
-                <div id="more-details" class="modal hide fade" >
-                    <div class="modal-header">
-                        <a href="#" class="close" data-dismiss="modal">×</a>
-                        <h3>Further Privacy Information</h3>
-                    </div>
-                    <div class="modal-body">
-                        <p>Your college log-in is encoded and stored in a database on a secure union server completely separate to your questionnaire answers. Your user name is stored simply so the computer knows that you have completed the survey. The computer also checks the answer you give for "department" in the questionaire against the department registered to your username, and the result of this check will be stored on the questionnaire results as a true/false value. At no point will this list of usernames be seen by anyone from Felix, the Union or the College (and as it’s encoded, even if they did see it, it wouldn’t mean much). Once the survey is finished (10th February) the user name database will be deleted, and the questionnaire answers will then be made available to a very small number of Felix writers who will be analysing them. The data will only be stored on Felix’s computers and will be transferred by secure College file-exchange. At no point will personal computers or USB sticks be used.</p>
-                        <p>To reiterate: at no point will it be possible for your questionnaire answers to be matched to you.</p>
-                        <p>Furthermore, once the article has been printed (17th February) all remaining data will be deleted. </p>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="#" data-dismiss="modal" class="btn primary">Close</a>
-                    </div>
-                </div>
+                <?php require ('privacybox.php'); ?>
             </div>
         <?php } else { ?>
         <div role="main" id="main">
             <div id="social-links" class="clearfix">
-                <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://dougal.union.ic.ac.uk/media/felix/sexsurvey/" data-related="feliximperial">Tweet</a>
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://union.ic.ac.uk/media/felix/sexismsurvey/" data-related="feliximperial">Tweet</a>
                 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                <div class="fb-like" data-href="https://dougal.union.ic.ac.uk/media/felix/sexsurvey/" data-send="true" data-layout="button_count" data-width="200" data-show-faces="false" data-font="arial"></div>
+                <div class="fb-like" data-href="https://union.ic.ac.uk/media/felix/sexismsurvey/" data-send="true" data-layout="button_count" data-width="200" data-show-faces="false" data-font="arial"></div>
             </div>
             <?php include('introduction.php'); ?>
             <?php
@@ -126,7 +113,7 @@
                     	?>
                         <div class="alert alert-block alert-success">
                             <h4 class="alert-heading">Thank you!</h4>
-                            Your response has already been recorded, thank you for filling out the survey. Results and analysis will be published in Felix on February 17, after which your data will be deleted.
+                            Your response has already been recorded, thank you for filling out the survey.
                         </div>
                         <?php
                     } elseif(array_key_exists('response', $_POST)) {
@@ -140,7 +127,7 @@
                         } ?>
                         <div class="alert alert-block alert-success">
                             <h4 class="alert-heading">Thank you!</h4>
-                            Your response has been recorded, thank you for filling out the survey. Results and analysis will be published in Felix on February 17, after which your data will be deleted.
+                            Your response has been recorded, thank you for filling out the survey.
                         </div>
                     <?php } else {
                         // Display questions
