@@ -4,6 +4,9 @@
  */
 
 require_once('../db.php');
+if(!defined('ACTIVE')) define('ACTIVE', true);
+
+if(ACTIVE != false) { die('Survey not closed'); }
 
 $fp = fopen('data.csv', 'w+');
 
