@@ -4,6 +4,7 @@
         "type": "radio",
         "name": "sex",
         "inline": true,
+        "default": "anon",
         "options": [
             {
                 "value": "male",
@@ -12,6 +13,10 @@
             {
                 "value": "female",
                 "label": "Female"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say"
             }
         ]
     },
@@ -19,6 +24,7 @@
         "label": "<strong>2</strong> - What is your ethnicity?",
         "type": "dropdown",
         "name": "ethnicity",
+        "default": "anon",
         "options": [
             {
                 "value": "asian",
@@ -43,6 +49,10 @@
             {
                 "value": "other",
                 "label": "White - Other"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say"
             }
         ]
     },
@@ -50,6 +60,7 @@
         "label": "<strong>3</strong> - What age are you?",
         "type": "dropdown",
         "name": "age",
+        "default": "anon",
         "options": [
             { 
                 "value": "17",
@@ -98,6 +109,10 @@
             {
                 "value": "28+",
                 "label": "28 or older"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say"
             }
         ]
     },
@@ -105,6 +120,7 @@
         "label": "<strong>4</strong> - What department are you?",
         "type": "dropdown",
         "name": "department",
+        "default": "anon",
         "options": [
             {
                 "value": "Aeronautics",
@@ -135,8 +151,8 @@
                 "label": "Computing"
             },
             {
-                "value": "Earth_Science_and_Engineering",
-                "label": "Earth Science and Engineering"
+                "value": "Earth_Science_&_Engineering",
+                "label": "Earth Science & Engineering"
             },
             {
                 "value": "Electrical_and_Electronic_Engineering",
@@ -152,7 +168,7 @@
             },
             {
                 "value": "Mechanical_Engineering",
-                "label": "Mechanical engineering"
+                "label": "Mechanical Engineering"
             },
             {
                 "value": "Life_Sciences",
@@ -169,6 +185,10 @@
             {
                 "value": "Humanities",
                 "label": "Humanities"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say"
             }
         ]
     },
@@ -176,6 +196,7 @@
         "label": "<strong>5</strong> - Do you think Imperial College is a sexist environment?",
         "type": "radio",
         "name": "impissexist",
+        "default": "anon",
         "options": [
             { 
                 "value": "yes",
@@ -188,6 +209,10 @@
             {
                 "value": "sometimes",
                 "label": "Sometimes"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say"
             }
         ]
     },
@@ -195,6 +220,7 @@
         "label": "<strong>6</strong> - In your opinion, on a scale of 1 to 10, how sexist is Imperial College?",
         "type": "dropdown",
         "name": "scale",
+        "default": "anon",
         "options": [
             {
                 "value": "1",
@@ -235,6 +261,10 @@
             {
                 "value": "10",
                 "label": "10 (Very sexist)"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say"
             }
         ]
     },
@@ -242,6 +272,7 @@
         "label": "<strong>7</strong> - Do you feel this has impacted negatively on your life at Imperial College?",
         "type": "radio",
         "name": "impact",
+        "default": "anon",
         "options": [
             { 
                 "value": "yes",
@@ -254,6 +285,10 @@
             {
                 "value": "sometimes",
                 "label": "It occasionally makes me uncomfortable"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say"
             }
         ]
     },
@@ -261,6 +296,7 @@
         "label": "<strong>8</strong> - Do you feel that lecturers are sexist?",
         "type": "radio",
         "name": "lecturers",
+        "default": "anon",
         "options": [
             { 
                 "value": "yes",
@@ -277,13 +313,18 @@
             {
                 "value": "na",
                 "label": "I don't feel this applies to me"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say"
             }
         ]
     },
-    "lecturers": {
+    "students": {
         "label": "<strong>9</strong> - Do you feel that your fellow students are sexist?",
         "type": "radio",
-        "name": "lecturers",
+        "name": "students",
+        "default": "anon",
         "options": [
             { 
                 "value": "yes",
@@ -300,6 +341,10 @@
             {
                 "value": "na",
                 "label": "I don't feel this applies to me"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say"
             }
         ]
     },
@@ -307,6 +352,7 @@
         "label": "<strong>10</strong> - Do you think that male students at Imperial College have an unjustified advantage over female students (academic, etc)?",
         "type": "radio",
         "name": "maleadv",
+        "default": "anon",
         "options": [
             { 
                 "value": "yes",
@@ -315,6 +361,10 @@
             {
                 "value": "no",
                 "label": "No"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say"
             }
         ]
     },
@@ -322,6 +372,7 @@
         "label": "<strong>11</strong> - Do you think that female students at Imperial College have an unjustified advantage over female students (academic, etc)?",
         "type": "radio",
         "name": "femaleadv",
+        "default": "anon",
         "options": [
             { 
                 "value": "yes",
@@ -330,6 +381,10 @@
             {
                 "value": "no",
                 "label": "No"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say"
             }
         ]
     },
@@ -337,6 +392,7 @@
         "label": "<strong>12</strong> - Do you think that women are appropriately represented in Imperial College Union?",
         "type": "radio",
         "name": "union",
+        "default": "anon",
         "options": [
             { 
                 "value": "yes",
@@ -345,6 +401,10 @@
             {
                 "value": "no",
                 "label": "No"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say"
             }
         ]
     },
@@ -357,6 +417,7 @@
         "label": "<strong>14</strong> - Do you think Imperial College or Imperial College Union should take action for gender equality and against sexism?",
         "type": "radio",
         "name": "action",
+        "default": "anon",
         "options": [
             { 
                 "value": "yes",
@@ -365,6 +426,10 @@
             {
                 "value": "no",
                 "label": "No"
+            },
+            {
+            	"value": "anon",
+            	"label": "Don't wish to say"
             }
         ]
     },
