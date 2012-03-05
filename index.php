@@ -3,12 +3,14 @@
     session_name("felix_sexism_survey");
     session_start();
 
+	$loginfailed = false;
+
     require('db.php');
     if(!defined('ACTIVE')) define('ACTIVE', true);
 	if (array_key_exists('login', $_POST)) {
 	    // attempting to login
 	    if (!login($_POST['uname'], $_POST['pass'])) {
-            ?><div class="alert alert-error">Sorry, your account details were not accepted. Please try again.</div><?php
+            $loginfailed = true;
 	    } else {
             $_SESSION['felix_sexism_survey']['uname'] = strtolower($_POST['uname']);
 		// Add redirect here if we need to
@@ -86,6 +88,9 @@
             <?php include('introduction.php'); ?>
             <?php
                 if (!isloggedin()) {
+					if ($loginfailed) {
+						?><div class="alert alert-error">Sorry, your account details were not accepted. Please try again.</div><?php
+					}
                     // not logged in? display login form
                     ?>
                         <form method="post" id="loginForm" class="form-horizontal">
