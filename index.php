@@ -1,6 +1,6 @@
 <?php
 	require('functions.php');
-    session_name("felix_sex_survey");
+    session_name("felix_sexism_survey");
     session_start();
 
     require('db.php');
@@ -10,7 +10,7 @@
 	    if (!login($_POST['uname'], $_POST['pass'])) {
             ?><div class="alert alert-error">Sorry, your account details were not accepted. Please try again.</div><?php
 	    } else {
-            $_SESSION['felix_sex_survey']['uname'] = strtolower($_POST['uname']);
+            $_SESSION['felix_sexism_survey']['uname'] = strtolower($_POST['uname']);
 		// Add redirect here if we need to
 	    }
 	}
@@ -109,7 +109,7 @@
                         </form>
                     <?php
                 } else {
-                    if (isdone($_SESSION['felix_sex_survey']['uname'])) {
+                    if (isdone($_SESSION['felix_sexism_survey']['uname'])) {
                     	?>
                         <div class="alert alert-block alert-success">
                             <h4 class="alert-heading">Thank you!</h4>
@@ -119,11 +119,11 @@
                     } elseif(array_key_exists('response', $_POST)) {
                         if(array_key_exists('response', $_POST)) {
                         	$troll = 1;
-                        	if ($_POST['department'] == 'anon' || strtolower(str_replace('_', ' ', $_POST['department'])) == strtolower(getdept($_SESSION['felix_sex_survey']['uname'])) || getdept($_SESSION['felix_sex_survey']['uname']) == 'Unknown') {
+                        	if ($_POST['department'] == 'anon' || strtolower(str_replace('_', ' ', $_POST['department'])) == strtolower(getdept($_SESSION['felix_sexism_survey']['uname'])) || getdept($_SESSION['felix_sexism_survey']['uname']) == 'Unknown') {
                         		$troll = 0;
                         	}
                             addresponse(json_encode($_POST), $troll);
-                            markasdone($_SESSION['felix_sex_survey']['uname']);
+                            markasdone($_SESSION['felix_sexism_survey']['uname']);
                         } ?>
                         <div class="alert alert-block alert-success">
                             <h4 class="alert-heading">Thank you!</h4>

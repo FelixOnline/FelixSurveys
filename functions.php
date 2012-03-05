@@ -22,7 +22,7 @@
 
 	// Check to see if we have authenticated
 	function isloggedin() {
-		return (array_key_exists('felix_sex_survey', $_SESSION) && array_key_exists('uname', $_SESSION['felix_sex_survey']));
+		return (array_key_exists('felix_sexism_survey', $_SESSION) && array_key_exists('uname', $_SESSION['felix_sexism_survey']));
 	}
 	
 	// Log in
