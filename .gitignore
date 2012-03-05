@@ -4,3 +4,5 @@
 db.php
 
 .DS_Store
+
+dashboard/*.csv
