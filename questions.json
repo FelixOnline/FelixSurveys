@@ -369,7 +369,7 @@
         ]
     },
     "femaleadv": {
-        "label": "<strong>11</strong> - Do you think that female students at Imperial College have an unjustified advantage over female students (academic, etc)?",
+        "label": "<strong>11</strong> - Do you think that female students at Imperial College have an unjustified advantage over male students (academic, etc)?",
         "type": "radio",
         "name": "femaleadv",
         "default": "anon",
