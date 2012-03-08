@@ -67,7 +67,7 @@
     </script>
     <div class="container">
         <header id="head">
-            <h1>The Felix Sexism Survey</h1>
+            <h1><img src="img/logo.png" alt-"The Felix Sexism Survey" /></h1>
         </header>
         <?php if(ACTIVE == false) { ?>
             <div id="closed">
