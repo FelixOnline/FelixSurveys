@@ -34,7 +34,7 @@
     <title>The Felix Sexism Survey</title>
     <meta name="description" content="The Felix Sexism Survey">
     <meta property="og:image" content="http://felixonline.co.uk/img/felix_cat-small.jpg"/>
-    <meta property="og:title" content="The Felix Sexism Sruvey"/>
+    <meta property="og:title" content="The Felix Sexism Survey"/>
     <meta property="og:type" content="website"/>
 
     <!-- Mobile viewport optimized: h5bp.com/viewport -->
