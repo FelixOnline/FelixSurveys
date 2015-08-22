@@ -1,16 +1,23 @@
 <?php
-	global $local;
-	$local = true;
+	function selfURL()
+	{
+	    $s = empty($_SERVER["HTTPS"]) ? '' : ($_SERVER["HTTPS"] == "on") ? "s" : "";
+	    $protocol = strleft(strtolower($_SERVER["SERVER_PROTOCOL"]), "/").$s;
+	    $port = ($_SERVER["SERVER_PORT"] == "80") ? "" : (":".$_SERVER["SERVER_PORT"]);
+	    return $protocol."://".$_SERVER['SERVER_NAME'].$port.$_SERVER['REQUEST_URI'];
+	}
+
+	function strleft($s1, $s2) { return substr($s1, 0, strpos($s1, $s2)); }
 
 	// Mark a user as having completed the survey
 	function markasdone($uname) {
-		$sql = "INSERT INTO `sexsurvey_completers` (uname) VALUES ('".mysql_real_escape_string(sha1($uname))."')";
+		$sql = "INSERT INTO `".TABLE_PREFIX."_completers` (uname) VALUES ('".mysql_real_escape_string(sha1($uname.getcourse($uname)))."')";
 		return mysql_query($sql);
 	}
 
 	// Check to see if a user has completed the survey
 	function isdone($uname) {
-		$sql = "SELECT COUNT(*) FROM `sexsurvey_completers` WHERE uname='".mysql_real_escape_string(sha1($uname))."'";
+		$sql = "SELECT COUNT(*) FROM `".TABLE_PREFIX."_completers` WHERE uname='".mysql_real_escape_string(sha1($uname.getcourse($uname)))."'";
 		$rsc = mysql_query($sql);
 		list($match) = mysql_fetch_array($rsc);
 		if ($match > 0) {
@@ -22,14 +29,12 @@
 
 	// Check to see if we have authenticated
 	function isloggedin() {
-		return (array_key_exists('felix_sex_survey', $_SESSION) && array_key_exists('uname', $_SESSION['felix_sex_survey']));
+		return (array_key_exists(COOKIE, $_SESSION) && array_key_exists('uname', $_SESSION[COOKIE]));
 	}
 	
 	// Log in
 	function login($uname, $pass) {
-		global $local;
-		
-		if ($local) {
+		if (LOCAL == true) {
 			return true;
 		}
 		return pam_auth($uname, $pass);
@@ -43,27 +48,39 @@
 
 	// get dept from ldap for user
 	function getdept($uname) {
-		global $local;
-		
-	    if(!$local) { // if on union server
-	        $ds=ldap_connect("addressbook.ic.ac.uk");
-	        $r=ldap_bind($ds);
-	        $justthese = array("o");
-	        $sr=ldap_search($ds, "ou=People, ou=shibboleth, dc=ic, dc=ac, dc=uk", "uid=$uname", $justthese);
-	        $info = ldap_get_entries($ds, $sr);
-	        if ($info["count"] > 0) {
-	            $data = explode('|', $info[0]['o'][0]);
-			return $data[2];
-	        } else {
-	            return 'Unknown';
-			}
+	    if(!LOCAL) { // if on union server
+	        $data = ldap_get_info($uname);
+			return($data[2]);
 	    } else {
-	        return 'Unknown';
+	        return 'Unknown (local)';
+	    }
+	}
+
+	// get course from ldap for user
+	function getcourse($uname) {
+	    if(!LOCAL) { // if on union server
+	        $data = ldap_get_info($uname);
+			return($data[0]);
+	    } else {
+	        return 'Unknown (local)';
 	    }
 	}
 	
 	// add survey responses to database
-	function addresponse($response, $troll) {
-		$sql = "INSERT INTO `sexsurvey_responses` (id, data, deptcheck) VALUES (NULL, '".mysql_real_escape_string($response)."', ".mysql_real_escape_string($troll).")";
-		return mysql_query($sql);
+	function addresponse($response, $secure_response, $troll) {
+		$sql = "INSERT INTO `".TABLE_PREFIX."_responses` (id, data, deptcheck) VALUES (NULL, '".mysql_real_escape_string($response)."', ".mysql_real_escape_string($troll).")";
+		$status = mysql_query($sql);
+		
+		if($status) {
+			if($secure_response != '[]') {
+				// has secure entries
+				$sql = "INSERT INTO `".TABLE_PREFIX."_secure_responses` (data, deptcheck) VALUES ('".mysql_real_escape_string($secure_response)."', ".mysql_real_escape_string($troll).");";
+				return mysql_query($sql);
+			} else {
+				return true;
+			}
+		}
+		
+		return false;
 	}
+	

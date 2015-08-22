@@ -24,6 +24,10 @@ $(document).ready(function() {
                                 dep.satisfied = false;
                             }
                         }
+
+                        if(answer == 'anon') {
+                            dep.satisfied = false;
+                        }
                     }
                     if(dep.satisfied == true) {
                         satisfied.push(dep);
@@ -85,7 +89,10 @@ $(document).ready(function() {
          * Reset all dependant questions
          */
         $.each(dependant.find($(this).parents('fieldset').attr('id')), function(key, value) {
-            $(value).fadeOut(200);
+            $(value).slideUp(200);
+
+            hideVal = value.id + "_hide";
+            $('#'+hideVal).slideDown(50);
         });
 
         var questions = dependant.find(
@@ -94,7 +101,10 @@ $(document).ready(function() {
         );
 
         $.each(questions, function(key, value) {
-            $(value).css('visibility', 'visible').fadeIn(200);
+            $(value).css('visibility', 'visible').slideDown(200);
+
+            hideVal = value.id + "_hide";
+            $('#'+hideVal).slideUp(50);
         });
     });
 
@@ -106,9 +116,27 @@ $(document).ready(function() {
     });
 
     $("a[rel=popover]")
-    .popover()
+    .popover({ trigger: 'hover' })
     .click(function(e) {
         e.preventDefault()
+    });
+
+    $(".number-input").keydown(function(event) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ( $.inArray(event.keyCode,[46,8,9,27,13,190]) !== -1 ||
+             // Allow: Ctrl+A
+            (event.keyCode == 65 && event.ctrlKey === true) || 
+             // Allow: home, end, left, right
+            (event.keyCode >= 35 && event.keyCode <= 39)) {
+                 // let it happen, don't do anything
+                 return;
+        }
+        else {
+            // Ensure that it is a number and stop the keypress
+            if (event.shiftKey || (event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105 )) {
+                event.preventDefault(); 
+            }   
+        }
     });
 });
 
