@@ -171,6 +171,7 @@ while($row = mysql_fetch_array($rsc)) {
 					default:
 						$realanswers = $questions[$column]['options'];
 						foreach ($realanswers as $option) {
+<<<<<<< HEAD
 							if($option['value'] == $data[$column][0]) {
 								$toadd = strip_tags($option['label']);
 								if($toadd == '') {
@@ -178,6 +179,10 @@ while($row = mysql_fetch_array($rsc)) {
 								}
 
 								$answers[] = $toadd;
+=======
+							if($option['value'] == $data[$column]) {
+								$answers[] = strip_tags($option['label']);
+>>>>>>> origin/master
 							}
 						}
 						break;
